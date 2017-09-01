@@ -20,6 +20,7 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/bookmark/templates" />
+        <option value="$MODULE_DIR$/myweb/templates" />
       </list>
     </option>
   </component>
