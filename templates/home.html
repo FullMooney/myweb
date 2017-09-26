@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}home.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+
+{%block content %}
+<div id="content_home">
+	<div id="hoemimg">
+		<a href="/"><img src="{% static 'img/pycon2017.png' %}" style="height: 50%;" /></a>
+		<h4 style="margin: 0;">This is Dajango powered web site.</h4>
+	</div>
+
+	<hr style="margin: 5px 0;">
+
+	<h2>Select Application</h2>
+
+	<table id="applist">
+		<tr>
+			<td><b><i><a href="{% url 'bookmark:index' %}">Bookmark</a></i></b></td>
+			<td>You can write your own posts and share to othes. </td>
+			<td Class="Edit"><i><a href="#">Add</a></i></td>
+			<td Class="Edit"><i><a href="#">Change</a></i></td>
+		</tr>
+
+		<tr>
+			<td><b><i><a href="{% url 'blog:index' %}">Blog</a></i></b></td>
+			<td>You can write your own posts and share to othes. </td>
+			<td Class="Edit"><i><a href="#">Add</a></i></td>
+			<td Class="Edit"><i><a href="#">Change</a></i></td>
+		</tr>
+
+		<tr>
+			<td><b><i><a href="#">Photo</a></i></b></td>
+			<td>You can write your own posts and share to othes. </td>
+			<td Class="Edit"><i><a href="#">Add</a></i></td>
+			<td Class="Edit"><i><a href="#">Change</a></i></td>
+		</tr>
+	</table>
+</div>
+{% endblock content %}
+
+{% block footer %}
+<div id="footer">
+	&copy; 파이썬 학습조직 2017
+</div>
+{% endblock footer %}
