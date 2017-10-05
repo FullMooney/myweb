@@ -29,6 +29,9 @@ urlpatterns = [
 	# Example: /tag/
 	url(r'^tag/$', TagTV.as_view(), name = 'tag_cloud'),
 
-	# Examole: /tag/tagname/
+	# Example: /tag/tagname/
 	url(r'^tag/(?P<tag>[^/]+(?u))/$', PostTOL.as_view(), name='tagged_object_list'),
+
+	# Example: /search/
+	url(r'^search/$', SearchFormView.as_view(), name='search'),
 ]
