@@ -16,10 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 #from home import views
-
+from django.conf.urls.static import static  # add for photo
+from django.conf import settings  # add for photo
 from myweb.views import HomeView
 #from bookmark.views import BookmarkLV, BookmarkDV
-#from myweb.views import HomeView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -28,9 +28,9 @@ urlpatterns = [
     url(r'^bookmark/', include('bookmark.urls', namespace='bookmark')),
     url(r'^blog/', include('blog.urls', namespace='blog')),
 #    url(r'^$', views.index),
-
+    url(r'^photo/', include('photo.urls', namespace='photo')), # add for photo
 	# Class-based view for bookmark app
 	#url(r'^bookmark/$', BookmarkLV.as_view(), name='index'),
 	#url(r'^bookmark/(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail')
 
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) # add for photo

@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView,TemplateView #TemplateView add
+from django.views.generic import ListView, DetailView,TemplateView #TemplateView add for tag
 from django.views.generic.dates import ArchiveIndexView, YearArchiveView, MonthArchiveView
 from django.views.generic.dates import DayArchiveView, TodayArchiveView
 
 from blog.models import Post
-from tagging.models import Tag, TaggedItem # add
-from tagging.views import TaggedObjectList # add
+from tagging.models import Tag, TaggedItem # add for tag
+from tagging.views import TaggedObjectList # add for tag
 
 ##----- search
 from django.views.generic.edit import FormView # add class type generic view
