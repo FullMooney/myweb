@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     #'home',
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
+    'tagging.apps.TaggingConfig',    # tagging
+    #'disqus',                       # comment
+    #'django.contrib.sites',         # comment
+    'photo.apps.PhotoConfig',        # photo
 ]
 
 MIDDLEWARE = [
