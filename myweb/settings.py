@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     #'disqus',                       # comment
     #'django.contrib.sites',         # comment
     'photo.apps.PhotoConfig',        # photo
+    'rss.apps.RssConfig'             #rss
 ]
 
 MIDDLEWARE = [
