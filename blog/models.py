@@ -4,6 +4,8 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.db import models
 from django.core.urlresolvers import reverse
 from tagging.fields import TagField # tagging
+from django.contrib.auth.models import User # for edit
+from django.utils.text import slugify # for edit
 
 # Create your models here.
 @python_2_unicode_compatible
@@ -15,6 +17,7 @@ class Post(models.Model):
 	create_date = models.DateTimeField('Create Date', auto_now_add=True)
 	modify_date = models.DateTimeField('Modify Date', auto_now=True)
 	tag = TagField() # tagging
+	owner = models.ForeignKey(User, null=True) # for edit
 
 	class Meta:
 		verbose_name='post'
@@ -33,4 +36,10 @@ class Post(models.Model):
 
 	def get_next_post(self):
 		return self.get_next_by_modify_date()
+
+	#for edit
+	def save(self, *args, **kwargs):
+		if not self.id:
+			self.slug = slugify(self.title, allow_unicode=True)
+		super(Post, self).save(*args, **kwargs)
 
