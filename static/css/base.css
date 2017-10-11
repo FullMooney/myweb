@@ -109,6 +109,7 @@ a:hover {
 	text-decoration: underline;
 }
 
+
 /* Table */
 table{
 	border-collapse: collapse;
@@ -120,4 +121,8 @@ td, th {
 	vertical-align: top;
 	padding: 5px 15px;
 	font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+table.change-list, table.change-list th, table.change-list td {
+	border: 1px solid #ccc;
 }

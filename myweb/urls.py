@@ -19,10 +19,15 @@ from django.contrib import admin
 from django.conf.urls.static import static  # add for photo
 from django.conf import settings  # add for photo
 from myweb.views import HomeView
+from myweb.views import UserCreateView, UserCreateDoneTV # for auth
 #from bookmark.views import BookmarkLV, BookmarkDV
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    # auth URL 3
+    url(r'^accounts/', include('django.contrib.auth.urls')),
+    url(r'^accounts/register/$', UserCreateView.as_view(), name='register'),
+    url(r'^accounts/register/done/$', UserCreateDoneTV.as_view(), name='register_done'),
 
     url(r'^$', HomeView.as_view(), name='home'), 
     url(r'^bookmark/', include('bookmark.urls', namespace='bookmark')),
