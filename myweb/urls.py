@@ -18,9 +18,8 @@ from django.contrib import admin
 #from home import views
 from django.conf.urls.static import static  # add for photo
 from django.conf import settings  # add for photo
-from myweb.views import HomeView
+from myweb.views import HomeView, UserCreateView, UserCreateDoneTV # for auth
 
-from myweb.views import UserCreateView, UserCreateDoneTV # for auth
 #from bookmark.views import BookmarkLV, BookmarkDV
 
 urlpatterns = [
