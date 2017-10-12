@@ -10,10 +10,8 @@ from django.contrib.auth.decorators import login_required # add
 
 # ---- TemplateView
 class HomeView(TemplateView):
-<<<<<<< HEAD
-
 	template_name = 'home.html'
-=======
+
 	template_name = 'home.html'
 
 # add for auth
@@ -32,4 +30,3 @@ class LoginRequiredMixin(object):
 	def as_view(cls, **initkwargs):
 		view = super(LoginRequiredMixin, cls).as_view(**initkwargs)
 		return login_required(view)
->>>>>>> 337c692f2366b9baed7adbdf6ce236a560f3a27d
