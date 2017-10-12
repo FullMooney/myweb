@@ -10,9 +10,13 @@ from django.contrib.auth.decorators import login_required # add
 
 # ---- TemplateView
 class HomeView(TemplateView):
+<<<<<<< HEAD
 	template_name = 'home.html'
 
 	template_name = 'home.html'
+=======
+    template_name = 'home.html'
+>>>>>>> 9d5928d31cae3eeb13adf57b9abf37026a9df758
 
 # add for auth
 # ---- User Creation
