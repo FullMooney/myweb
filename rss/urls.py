@@ -15,5 +15,6 @@ urlpatterns= [
 	url(r'^(?P<pk>\d)/$', RssDV.as_view(), name='Rssdetail'),
    # url(r'^/feed/$', 'myweb.rss.views.rssfeed'),
     url(r'^feed/$', views.rssfeed, name='rssfeed' ),
+    url(r'^airData/$', views.airData, name='airData' ),
 #	url(r'^/feed/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
 ]
