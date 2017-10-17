@@ -1,12 +1,59 @@
 div#content_home{
-	position: absolute;
-	top: 80px;
-	left: 110px;
-	right: 110px;
+	position: relative;
+	top: 20px;
+	width: 80%;
+	left: 150px;
+}
+
+div#content_home > table{
+	position: relative;
+	float: left;
+	align-content: center;	
 }
 
 div#homeimg{
-	background: #ddd;
+	position: relative;
 	padding: 5px 0 1px 0;
-	text-align: center;
+	text-align: center;	
+	background: rgba(0,46,122,1);
+	background-size: cover;
+	align-content: center;
 }
+
+div#homeimg > h4{
+	color: rgba(252,217,36,1);
+}
+
+.fl_left{
+	position: relative;
+	float: left;
+}
+
+.fl_right{
+	position: relative;
+	float: right;
+}
+
+
+.tag-cloud{
+	width: 200px;
+	margin-left: 30px;
+	text-align: center;
+	padding: 5px;
+	border: 2px solid orange;
+	background-color: rgba(252,217,36,0.8);
+	position: relative;
+	float: right;	
+}
+
+.tag-1 {font-size:12px;}
+
+.tag-2 {font-size:14px;}
+
+.tag-3 {font-size:16px;}
+
+.tag-4 {font-size:18px;}
+
+.tag-5 {font-size:20px;}
+
+.tag-6 {font-size:24px;}

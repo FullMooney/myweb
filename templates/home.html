@@ -6,43 +6,58 @@
 {% block extrastyle %}{% static "css/home.css" %}{% endblock %}
 
 {%block content %}
+<div id="homeimg">
+	<img src="{% static 'img/pycon2017.png' %}" style="align-content:center;" />
+	<h4 >"Life is short, You need Python"</h4>
+</div>
 <div id="content_home">
-	<div id="hoemimg">
-		<a href="/"><img src="{% static 'img/pycon2017.png' %}" style="height: 50%;" /></a>
-		<h4 style="margin: 0;">This is Dajango powered web site.</h4>
-	</div>
+	
 
 	<hr style="margin: 5px 0;">
-
+    
 	<h2>Select Application</h2>
+	
+		<table id="applist">
+			<tr>
+				<td><b><i><a href="{% url 'bookmark:index' %}">즐겨찾기</a></i></b></td>
+				<td>You can store your own bookmarks by Bookmark application. It's also possible to update or delete your bookmarks.</td>
+				<td Class="Edit"><i><a href="{% url 'bookmark:add' %}">Add</a></i></td>
+				<td Class="Edit"><i><a href="{% url 'bookmark:change' %}">Change</a></i></td>
+			</tr>
 
-	<table id="applist">
-		<tr>
-			<td><b><i><a href="{% url 'bookmark:index' %}">Bookmark</a></i></b></td>
-			<td>You can store your own bookmarks by Bookmark application. It's also possible to update or delete your bookmarks.</td>
-			<td Class="Edit"><i><a href="{% url 'bookmark:add' %}">Add</a></i></td>
-			<td Class="Edit"><i><a href="{% url 'bookmark:change' %}">Change</a></i></td>
-		</tr>
+			<tr>
+				<td><b><i><a href="{% url 'blog:index' %}">블로그</a></i></b></td>
+				<td>This application makes it possible to log daily events or wirte your own interests such as hobbies, techniques, etc.</td>
+				<td Class="Edit"><i><a href="{% url 'blog:add' %}">Add</a></i></td>
+				<td Class="Edit"><i><a href="{% url 'blog:change' %}">Change</a></i></td>
+			</tr>
 
-		<tr>
-			<td><b><i><a href="{% url 'blog:index' %}">Blog</a></i></b></td>
-			<td>This application makes it possible to log daily events or wirte your own interests such as hobbies, techniques, etc.</td>
-			<td Class="Edit"><i><a href="{% url 'blog:add' %}">Add</a></i></td>
-			<td Class="Edit"><i><a href="{% url 'blog:change' %}">Change</a></i></td>
-		</tr>
+			<tr>
+				<td><b><i><a href="{% url 'photo:index' %}">갤러리</a></i></b></td>
+				<td>You can upload your own photos through this application. If you delete an album, all photos within it will be deleted.</td>
+				<td Class="Edit"><i><a href="{% url 'photo:album_add' %}">Add</a></i></td>
+				<td Class="Edit"><i><a href="{% url 'photo:album_change' %}">Change</a></i></td>
+			</tr>
+		</table>
+	
+	<div class="fl_right">
+		<div class="tag-cloud">
 
-		<tr>
-			<td><b><i><a href="{% url 'photo:index' %}">Photo</a></i></b></td>
-			<td>You can upload your own photos through this application. If you delete an album, all photos within it will be deleted.</td>
-			<td Class="Edit"><i><a href="{% url 'photo:album_add' %}">Add</a></i></td>
-			<td Class="Edit"><i><a href="{% url 'photo:album_change' %}">Change</a></i></td>
-		</tr>
-	</table>
-</div>
+			{% load tagging_tags %}
+			{% tag_cloud_for_model blog.Post as tags with steps=6 min_count=1 distribution=log %}
+			{% for tag in tags %}
+			<span class="tag-{{tag.font_size}}">
+				<a href="{% url 'blog:tagged_object_list' tag.name %}">{{tag.name}} ({{tag.font_size}})</a>
+			</span>
+			{% endfor %}
+		</div>
+
+	</div>
+</div>	
+
+
 {% endblock content %}
-
 {% block footer %}
-<div id="footer">
-	&copy; 파이썬 학습조직 2017
+<div>
 </div>
 {% endblock footer %}
