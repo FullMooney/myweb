@@ -18,8 +18,8 @@ from django.contrib import admin
 #from home import views
 from django.conf.urls.static import static  # add for photo
 from django.conf import settings  # add for photo
-from myweb.views import HomeView
-from myweb.views import UserCreateView, UserCreateDoneTV # for auth
+from myweb.views import HomeView, UserCreateView, UserCreateDoneTV # for auth
+
 #from bookmark.views import BookmarkLV, BookmarkDV
 
 urlpatterns = [
@@ -34,6 +34,8 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls', namespace='blog')),
 #    url(r'^$', views.index),
     url(r'^photo/', include('photo.urls', namespace='photo')), # add for photo
+
+    url(r'^rss/', include('rss.urls', namespace='rss')), # add for rss
 	# Class-based view for bookmark app
 	#url(r'^bookmark/$', BookmarkLV.as_view(), name='index'),
 	#url(r'^bookmark/(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail')
