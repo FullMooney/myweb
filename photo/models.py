@@ -7,12 +7,15 @@ from django.core.urlresolvers import reverse
 
 from photo.fields import ThumbnailImageField
 
+from django.contrib.auth.models import User # for edit
+
 # Create your models here.
 
 @python_2_unicode_compatible
 class Album(models.Model):
 	name = models.CharField(max_length=50)
 	description = models.CharField('One Line Description', max_length=100, blank=True)
+	owner = models.ForeignKey(User, null=True) # for edit
 
 	class Meta:
 		ordering = ['name']
@@ -30,6 +33,7 @@ class Photo(models.Model):
 	image = ThumbnailImageField(upload_to='photo/%Y/%m')
 	description = models.TextField('Photo Description', blank=True)
 	upload_date = models.DateTimeField('Upload Date', auto_now_add=True)
+	owner = models.ForeignKey(User, null=True) # for edit
 
 	class Meta:
 		ordering = ['title']

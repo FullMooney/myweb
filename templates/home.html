@@ -19,23 +19,23 @@
 	<table id="applist">
 		<tr>
 			<td><b><i><a href="{% url 'bookmark:index' %}">Bookmark</a></i></b></td>
-			<td>You can write your own posts and share to othes. </td>
-			<td Class="Edit"><i><a href="#">Add</a></i></td>
-			<td Class="Edit"><i><a href="#">Change</a></i></td>
+			<td>You can store your own bookmarks by Bookmark application. It's also possible to update or delete your bookmarks.</td>
+			<td Class="Edit"><i><a href="{% url 'bookmark:add' %}">Add</a></i></td>
+			<td Class="Edit"><i><a href="{% url 'bookmark:change' %}">Change</a></i></td>
 		</tr>
 
 		<tr>
 			<td><b><i><a href="{% url 'blog:index' %}">Blog</a></i></b></td>
-			<td>You can write your own posts and share to othes. </td>
-			<td Class="Edit"><i><a href="#">Add</a></i></td>
-			<td Class="Edit"><i><a href="#">Change</a></i></td>
+			<td>This application makes it possible to log daily events or wirte your own interests such as hobbies, techniques, etc.</td>
+			<td Class="Edit"><i><a href="{% url 'blog:add' %}">Add</a></i></td>
+			<td Class="Edit"><i><a href="{% url 'blog:change' %}">Change</a></i></td>
 		</tr>
 
 		<tr>
-			<td><b><i><a href="#">Photo</a></i></b></td>
-			<td>You can write your own posts and share to othes. </td>
-			<td Class="Edit"><i><a href="#">Add</a></i></td>
-			<td Class="Edit"><i><a href="#">Change</a></i></td>
+			<td><b><i><a href="{% url 'photo:index' %}">Photo</a></i></b></td>
+			<td>You can upload your own photos through this application. If you delete an album, all photos within it will be deleted.</td>
+			<td Class="Edit"><i><a href="{% url 'photo:album_add' %}">Add</a></i></td>
+			<td Class="Edit"><i><a href="{% url 'photo:album_change' %}">Change</a></i></td>
 		</tr>
 	</table>
 </div>
