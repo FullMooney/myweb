@@ -5,7 +5,7 @@ from bookmark.views import * # for edit
 urlpatterns= [
 	#Class-based views
 	url(r'^$', BookmarkLV.as_view(), name='index'),
-	url(r'^(?P<pk>\d)/$', BookmarkDV.as_view(), name='detail'),
+	url(r'^(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail'),
 
 	#### add below for edit
 	# Example: /add/
