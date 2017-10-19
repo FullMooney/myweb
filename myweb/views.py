@@ -1,18 +1,23 @@
 from django.views.generic.base import TemplateView
 
 # add 3 import for auth
+from blog.models import Post
+from django.views.generic import ListView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth.decorators import login_required # add
+#from django.db.models.loading import get_model
+
 
 #Create your vies here
 
 # ---- TemplateView
-class HomeView(TemplateView):
-
-	template_name = 'home.html'
-
+class HomeView(ListView):
+	model = Post
+	template_name = 'home.html'	
+	context_object_name = 'posts'
+	
 # add for auth
 # ---- User Creation
 class UserCreateView(CreateView):

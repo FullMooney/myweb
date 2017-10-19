@@ -18,3 +18,42 @@
 .tag-5 {font-size:20px;}
 
 .tag-6 {font-size:24px;}
+
+
+.blog-list{
+	position: relative;
+	max-width: 1460px;
+	overflow: hidden;
+	margin: 100px 290px 30px 100px;
+}
+
+.cont_post{
+	position: relative;
+	max-width: 940px;
+	height: 160px;
+	padding-right: 220px;
+	border-bottom: 1px solid #ededed;	
+	overflow: hidden;
+	text-overflow: ellipsis;	
+	white-space: normal;
+}
+
+.cont_img{
+	position: absolute;
+	top: 10px;
+	right: 0px;
+	width: 170px;
+	height: 120px;
+}
+
+
+.txt_wrap{
+	text-decoration: none;
+	font-size: 12px;
+	font-family: Avenir,"Lato","애플 SD 산돌고딕 Neo","Apple SD Gothic Neo","나눔바른고딕",NanumBarunGothic,"나눔고딕",NanumGothic,"맑은 고딕","Malgun Gothic","돋움",dotum,AppleGothic,sans-serif;
+}
+
+.txt_shorten{
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}

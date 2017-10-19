@@ -7,52 +7,37 @@
 
 {%block content %}
 <div id="homeimg">
-	<img src="{% static 'img/pycon2017.png' %}" style="align-content:center;" />
+	<img src="{% static 'img/pycon2017.png' %}" style="align-content:center;width: 490px;height: 291px;" />
 	<h4 >"Life is short, You need Python"</h4>
 </div>
 <div id="content_home">
 	
-
 	<hr style="margin: 5px 0;">
-    
-	<h2>Select Application</h2>
-	
-		<table id="applist">
-			<tr>
-				<td><b><i><a href="{% url 'bookmark:index' %}">즐겨찾기</a></i></b></td>
-				<td>You can store your own bookmarks by Bookmark application. It's also possible to update or delete your bookmarks.</td>
-				<td Class="Edit"><i><a href="{% url 'bookmark:add' %}">Add</a></i></td>
-				<td Class="Edit"><i><a href="{% url 'bookmark:change' %}">Change</a></i></td>
-			</tr>
 
-			<tr>
-				<td><b><i><a href="{% url 'blog:index' %}">블로그</a></i></b></td>
-				<td>This application makes it possible to log daily events or wirte your own interests such as hobbies, techniques, etc.</td>
-				<td Class="Edit"><i><a href="{% url 'blog:add' %}">Add</a></i></td>
-				<td Class="Edit"><i><a href="{% url 'blog:change' %}">Change</a></i></td>
-			</tr>
-
-			<tr>
-				<td><b><i><a href="{% url 'photo:index' %}">갤러리</a></i></b></td>
-				<td>You can upload your own photos through this application. If you delete an album, all photos within it will be deleted.</td>
-				<td Class="Edit"><i><a href="{% url 'photo:album_add' %}">Add</a></i></td>
-				<td Class="Edit"><i><a href="{% url 'photo:album_change' %}">Change</a></i></td>
-			</tr>
-		</table>
-	
-	<div class="fl_right">
-		<div class="tag-cloud">
-
-			{% load tagging_tags %}
-			{% tag_cloud_for_model blog.Post as tags with steps=6 min_count=1 distribution=log %}
-			{% for tag in tags %}
-			<span class="tag-{{tag.font_size}}">
-				<a href="{% url 'blog:tagged_object_list' tag.name %}">{{tag.name}} ({{tag.font_size}})</a>
-			</span>
-			{% endfor %}
+	<div class="blog-list">
+		{% for post in posts %}
+		<div class="cont_post">
+			<h2><a href='{{ post.get_absolute_url }}' class="txt_wrap">{{post.title}}</a></h2>
+			<div class="cont_img">				
+				<a href="{{ post.get_absolute_url }}"><img width="100%" height="100%" src="/media/photo/2017/10/201609141110777623_57d8b27def1cc_99_20160914111505.jpg" /></a>
+			</div>
+			<p class="">{{ post.content }}</p>								
+			{{post.modify_date|date:"N d, Y"}}
 		</div>
-
+		{% endfor %}	
+		
 	</div>
+	<div class="tag-cloud">
+
+		{% load tagging_tags %}
+		{% tag_cloud_for_model blog.Post as tags with steps=6 min_count=1 distribution=log %}
+		{% for tag in tags %}
+		<span class="tag-{{tag.font_size}}">
+			<a href="{% url 'blog:tagged_object_list' tag.name %}">{{tag.name}} ({{tag.font_size}})</a>
+		</span>
+		{% endfor %}
+	</div>	
+	
 </div>	
 
 

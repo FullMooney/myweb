@@ -26,6 +26,7 @@ div#menu {
 	/*background: rgba(252,217,36,1);*/
 	background: rgba(0,46,122,1);
 	font-size: 8px;
+
 }
 
 div#content {
@@ -64,6 +65,11 @@ div#white{
 	color: rgba(252,217,36,1);
 	font-weight: bold;
 	font-size: 16px;
+	border: 2px solid rgba(252,217,36,1);
+	border-radius: 25px;
+	width: 220px;	
+	height: 30px;
+	text-decoration: none !important;
 }
 
 .welcome{
@@ -83,12 +89,19 @@ div#white{
 /* Menu */
 div#menu a:link, div#menu a:visited {
 	color: rgba(252,217,36,1);
+	text-decoration: none !important;
+}
+
+div#menu a:hover {
+	color: rgba(252,217,36, 0.8);
+	text-decoration: none !important;
 }
 
 div#menu > li {
 	display: table-cell;
 	vertical-align: middle;
-	border: 2px solid rgba(252,217,36,1);
+	/*border: 2px solid rgba(252,217,36,1);*/
+	border: 0px solid rgba(252,217,36,1);
 	border-radius: 25px;
 	text-align: center;
 	font-weight: bold;
@@ -105,7 +118,7 @@ div#menu li ul{
 	border-left: 1px solid rgba(0,46,122,1);
 	border-bottom: 1px solid rgba(0,46,122,1);
 	background: rgba(0,0,0,0.4);
-	z-index: 1;
+	z-index: 1;	
 }
 
 div#menu li:hover ul {
@@ -115,7 +128,6 @@ div#menu li:hover ul {
 /* link */
 a:link, a:visited{
 	color: rgba(0,46,122,1);
-	text-decoration: :none;
 	font-size: 13px
 }
 

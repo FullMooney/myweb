@@ -3,6 +3,8 @@ div#content_home{
 	top: 20px;
 	width: 80%;
 	left: 150px;
+	max-width: 1100px;
+	clear: both;
 }
 
 div#content_home > table{
@@ -35,16 +37,6 @@ div#homeimg > h4{
 }
 
 
-.tag-cloud{
-	width: 200px;
-	margin-left: 30px;
-	text-align: center;
-	padding: 5px;
-	border: 2px solid orange;
-	background-color: rgba(252,217,36,0.8);
-	position: relative;
-	float: right;	
-}
 
 .tag-1 {font-size:12px;}
 
@@ -57,3 +49,52 @@ div#homeimg > h4{
 .tag-5 {font-size:20px;}
 
 .tag-6 {font-size:24px;}
+
+.blog-list{
+	position: relative;
+	max-width: 1060px;
+	overflow: hidden;
+	margin: 0 290px 30px 0;
+}
+
+.cont_post{
+	position: relative;
+	max-width: 540px;
+	height: 160px;
+	padding-right: 220px;
+	border-bottom: 1px solid #ededed;	
+	overflow: hidden;
+	text-overflow: ellipsis;	
+	white-space: normal;
+}
+
+.cont_img{
+	position: absolute;
+	top: 10px;
+	right: 0px;
+	width: 170px;
+	height: 120px;
+}
+
+
+.tag-cloud{
+	width: 300px;
+	top: 10px;
+	right: 0px;
+	text-align: center;
+	padding: 5px;
+	border: 2px solid rgba(0,46,122,1);
+	background-color: rgba(252,217,36,1);
+	position: absolute;	
+}
+
+.txt_wrap{
+	text-decoration: none;
+	font-size: 12px;
+	font-family: Avenir,"Lato","애플 SD 산돌고딕 Neo","Apple SD Gothic Neo","나눔바른고딕",NanumBarunGothic,"나눔고딕",NanumGothic,"맑은 고딕","Malgun Gothic","돋움",dotum,AppleGothic,sans-serif;
+}
+
+.txt_shorten{
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}

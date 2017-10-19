@@ -12,7 +12,7 @@
 
 <body>
 	<div id="header">
-		<h2 class="maintitle">기술블로그-파이썬학습조직</h2>
+		<a href="{% url 'home' %}"><h2 class="maintitle">파이썬학습조직-기술블로그</h2></a>
 		{% if user.is_active %}
 		<h4 class="welcome">Welcome, 
 			<strong>{% firstof user.get_short_name user.get_username %}</strong>
@@ -28,12 +28,11 @@
 	</div>
 
 	<div id="menu">
-		<li><a href="{% url 'home' %}">Home</a></li>
 		<li><a href="{% url 'bookmark:index' %}">Bookmark</a></li>
 		<li><a href="{% url 'blog:index' %}">Blog</a></li>
 		<li><a href="{% url 'photo:index' %}">Photo</a></li>
 
-		<li><a href="#">Add&bigtriangledown;</a>
+		<li><a href="#">Add &bigtriangledown;</a>
 			<ul>
 				<li><a href="{% url 'bookmark:add' %}">BookMark</a></li> 
 				<li><a href="{% url 'blog:add' %}">Post</a></li>
@@ -41,7 +40,7 @@
 				<li><a href="{% url 'photo:photo_add' %}">Photo</a></li>
 			</ul>
 		</li>
-		<li><a href="#">Change&bigtriangledown;</a>
+		<li><a href="#">Change &bigtriangledown;</a>
 			<ul>
 				<li><a href="{% url 'bookmark:change' %}">BookMark</a></li>
 				<li><a href="{% url 'blog:change' %}">Post</a></li>
