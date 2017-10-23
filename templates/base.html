@@ -13,6 +13,9 @@
 <body>
 	<div id="header">
 		<a href="{% url 'home' %}"><h2 class="maintitle">파이썬학습조직-기술블로그</h2></a>
+
+		<h4 class="welcome"><a href="#" class="weather">미세먼지/날씨 H4</a></h4>
+				
 		{% if user.is_active %}
 		<h4 class="welcome">Welcome, 
 			<strong>{% firstof user.get_short_name user.get_username %}</strong>
@@ -25,6 +28,7 @@
 			<a href="{% url 'register' %}">Register </a>
 		</h4>
 		{% endif %}
+		
 	</div>
 
 	<div id="menu">
@@ -50,7 +54,7 @@
 		</li>
 
 		<li><a href="{% url 'blog:post_archive' %}">Archive</a></li>
-		<li><a href="{% url 'blog:search' %}">Search</a></li>
+		<!-- <li><a href="{% url 'blog:search' %}">Search</a></li> -->
 		<li><a href="{% url 'admin:index' %}">Admin</a></li>
 	</div>
 

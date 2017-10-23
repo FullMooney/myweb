@@ -32,8 +32,12 @@ div#menu {
 div#content {
 	position: relative;
 	top: 70px;
-	left: 50px;
-	right: 50px;
+	/*left: 50px;
+	right: 50px;*/
+	width: 70%;
+	margin-left: 15%;
+	align-content: center;
+	font-size: 16px;
 }
 
 div#footer {
@@ -80,6 +84,7 @@ div#white{
 	color: rgba(252,217,36,1);
 	font-weight: normal;
 	font-size: 12px;
+	width: 400px;
 }
 
 .welcome a:link, .welcome a:visited{
@@ -122,13 +127,13 @@ div#menu li ul{
 }
 
 div#menu li:hover ul {
-	display: block;
+	display: block;	
 }
 
 /* link */
 a:link, a:visited{
-	color: rgba(0,46,122,1);
-	font-size: 13px
+	color: #434b51;
+	font-size: 14px;
 }
 
 a:hover {
@@ -150,4 +155,31 @@ td, th {
 
 table.change-list, table.change-list th, table.change-list td {
 	border: 1px solid #ccc;
+}
+
+
+.container{
+	position: relative;
+	width: 100%;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+
+.date{
+	font-size: 12px;
+	color: #b5b5b5;
+	padding-top: 7px;	
+}
+
+.post_title{
+	font-size: 30px;
+	color: #434b51;
+	padding-bottom: 20px;
+}
+
+.weather{
+	color: #ffffff;
+	text-decoration: none !important;
 }

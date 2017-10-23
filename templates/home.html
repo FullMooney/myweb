@@ -17,13 +17,12 @@
 	<div class="blog-list">
 		{% for post in posts %}
 		<div class="cont_post">
-			<h2><a href='{{ post.get_absolute_url }}' class="txt_wrap">{{post.title}}</a></h2>
+			<h2><a href='{{ post.get_absolute_url }}' class="txt_wrap">{{post.title}} - {{post.modify_date|date:"N d, Y"}}</a></h2>
 			<div class="cont_img">				
 				<a href="{{ post.get_absolute_url }}"><img width="100%" height="100%" src="/media/photo/2017/10/201609141110777623_57d8b27def1cc_99_20160914111505.jpg" /></a>
 			</div>
-			<p class="">{{ post.content }}</p>								
-			{{post.modify_date|date:"N d, Y"}}
-		</div>
+			<p class="txt_shorten">{{ post.content }}</p>											
+		</div>		
 		{% endfor %}	
 		
 	</div>
@@ -33,8 +32,8 @@
 		{% tag_cloud_for_model blog.Post as tags with steps=6 min_count=1 distribution=log %}
 		{% for tag in tags %}
 		<span class="tag-{{tag.font_size}}">
-			<a href="{% url 'blog:tagged_object_list' tag.name %}">{{tag.name}} ({{tag.font_size}})</a>
-		</span>
+			<a href="{% url 'blog:tagged_object_list' tag.name %}">&nbsp;{{tag.name}}&nbsp;</a>
+		</span> 
 		{% endfor %}
 	</div>	
 	

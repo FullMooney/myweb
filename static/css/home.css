@@ -9,7 +9,7 @@ div#content_home{
 
 div#content_home > table{
 	position: relative;
-	float: left;
+	/*float: left;*/
 	align-content: center;	
 }
 
@@ -38,17 +38,17 @@ div#homeimg > h4{
 
 
 
-.tag-1 {font-size:12px;}
+.tag-1 {font-size:12px; text-decoration: none !important;}
 
-.tag-2 {font-size:14px;}
+.tag-2 {font-size:14px; text-decoration: none !important;}
 
-.tag-3 {font-size:16px;}
+.tag-3 {font-size:16px; text-decoration: none !important;}
 
-.tag-4 {font-size:18px;}
+.tag-4 {font-size:18px; text-decoration: none !important;}
 
-.tag-5 {font-size:20px;}
+.tag-5 {font-size:20px; text-decoration: none !important;}
 
-.tag-6 {font-size:24px;}
+.tag-6 {font-size:24px; text-decoration: none !important;}
 
 .blog-list{
 	position: relative;
@@ -60,7 +60,7 @@ div#homeimg > h4{
 .cont_post{
 	position: relative;
 	max-width: 540px;
-	height: 160px;
+	height: 154px;
 	padding-right: 220px;
 	border-bottom: 1px solid #ededed;	
 	overflow: hidden;
@@ -78,7 +78,7 @@ div#homeimg > h4{
 
 
 .tag-cloud{
-	width: 300px;
+	width: 276px;
 	top: 10px;
 	right: 0px;
 	text-align: center;
@@ -97,4 +97,14 @@ div#homeimg > h4{
 .txt_shorten{
 	overflow: hidden;
 	text-overflow: ellipsis;	
+}
+
+
+.container{
+	position: relative;
+	width: 100%;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
 }
