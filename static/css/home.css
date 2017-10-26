@@ -81,16 +81,19 @@ div#homeimg > h4{
 	width: 276px;
 	top: 10px;
 	right: 0px;
-	text-align: center;
+	text-align: left;
 	padding: 5px;
-	border: 2px solid rgba(0,46,122,1);
-	background-color: rgba(252,217,36,1);
+	/*border: 2px solid rgba(0,46,122,1);
+	background-color: rgba(252,217,36,1);*/
+	border: 0px;
+
 	position: absolute;	
 }
 
+
 .txt_wrap{
 	text-decoration: none;
-	font-size: 12px;
+	font-size: 14px;
 	font-family: Avenir,"Lato","애플 SD 산돌고딕 Neo","Apple SD Gothic Neo","나눔바른고딕",NanumBarunGothic,"나눔고딕",NanumGothic,"맑은 고딕","Malgun Gothic","돋움",dotum,AppleGothic,sans-serif;
 }
 
@@ -107,4 +110,20 @@ div#homeimg > h4{
 	margin-right: auto;
 	margin-bottom: 0px;
 	margin-left: auto;
+}
+
+.gap10{
+	height: 10px;
+}
+
+.gap20{
+	height: 20px;
+}
+
+.gap30{
+	height: 30px;
+}
+
+.gap40{
+	height: 40px;
 }

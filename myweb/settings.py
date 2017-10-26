@@ -40,11 +40,14 @@ INSTALLED_APPS = [
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
     'tagging.apps.TaggingConfig',    # tagging
-    #'disqus',                       # comment
-    #'django.contrib.sites',         # comment
+    'disqus',                        # comment
+    'django.contrib.sites',          # comment
     'photo.apps.PhotoConfig',        # photo
     'rss.apps.RssConfig'             #rss
 ]
+
+DISQUS_WEBSITE_SHORTNAME = 'python-study-group' # comment
+SITE_ID = 1                                     # comment
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -4,6 +4,10 @@ body {
 	/* background: rgba(0,46,122,1);*/
 }
 
+h4{
+	font-size: 16px;
+}
+
 /* PageStructure */
 div#header {
 	position: relative;
@@ -95,6 +99,7 @@ div#white{
 div#menu a:link, div#menu a:visited {
 	color: rgba(252,217,36,1);
 	text-decoration: none !important;
+	font-size: 14px;
 }
 
 div#menu a:hover {
@@ -133,11 +138,12 @@ div#menu li:hover ul {
 /* link */
 a:link, a:visited{
 	color: #434b51;
-	font-size: 14px;
+	text-decoration: none !important;
+	/*font-size: 14px;*/
 }
 
 a:hover {
-	text-decoration: underline;
+	text-decoration: underline !important;
 }
 
 /* Table */

@@ -24,6 +24,12 @@
 			{% endfor %}
 			<a href="{% url 'blog:tag_cloud' %}"><i>[ TagCloud ]</i></a>
 		</div>
+
+		<div class="gap10"></div>
+		<div>
+		{% load disqus_tags %}
+		{% disqus_show_comments %}
+		</div>
 	</div>
 
 	<p class="other_posts">

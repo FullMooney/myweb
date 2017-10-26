@@ -28,6 +28,18 @@
 	</div>
 	<div class="tag-cloud">
 
+		<div id="stock_cont">
+		<h4><b>투자정보</b></h4>
+			<span style="color: #ff0000;">KOSPI : 2490.25</span>
+			<div class="gap10"></div>
+			<span style="color: #ff0000;">KOSPI : 2490.25</span>
+			<div class="gap10"></div>
+			<span style="color: #ff0000;">KOSPI : 2490.25</span>
+		</div>
+
+		<div class="gap40"></div>
+
+		<h4><b>TAGS</b></h4>
 		{% load tagging_tags %}
 		{% tag_cloud_for_model blog.Post as tags with steps=6 min_count=1 distribution=log %}
 		{% for tag in tags %}
@@ -36,6 +48,7 @@
 		</span> 
 		{% endfor %}
 	</div>	
+
 	
 </div>	
 
