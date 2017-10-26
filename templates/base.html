@@ -53,10 +53,12 @@
 			</ul>
 		</li>
 
-		<li><a href="{% url 'blog:post_archive' %}">Archive</a></li>
+		<!-- <li><a href="{% url 'blog:post_archive' %}">Archive</a></li> -->
 		<!-- <li><a href="{% url 'blog:search' %}">Search</a></li> -->
 		<li><a href="{% url 'admin:index' %}">Admin</a></li>
 	</div>
+
+	<div style="height: 20px;background:rgba(0,46,122,1);"></div>
 
 	{% block content %}{% endblock %}
 
