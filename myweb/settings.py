@@ -21,6 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'd1rax#9-@i&zf+fesv-#^*r-4_o8fxnl7*^t!lk$roj+v_r(4z'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -39,15 +40,7 @@ INSTALLED_APPS = [
     #'home',
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
-    'tagging.apps.TaggingConfig',    # tagging
-    'disqus',                        # comment
-    'django.contrib.sites',          # comment
-    'photo.apps.PhotoConfig',        # photo
-    'rss.apps.RssConfig'             #rss
 ]
-
-DISQUS_WEBSITE_SHORTNAME = 'python-study-group' # comment
-SITE_ID = 1                                     # comment
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -136,7 +129,3 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] #add
 
 MEDIA_URL = '/media/' #add
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #add
-
-#LOGIN_URL='/accounts/login/'
-#LOGOUT_URL ='/accounts/logout/'
-LOGIN_REDIRECT_URL = '/'
