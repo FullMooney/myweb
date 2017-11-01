@@ -2,18 +2,23 @@ from __future__ import unicode_literals
 from django.utils.encoding import python_2_unicode_compatible
 
 from django.db import models
+from django.contrib import admin
+from django import forms
 from django.core.urlresolvers import reverse
 from tagging.fields import TagField # tagging
 from django.contrib.auth.models import User # for edit
 from django.utils.text import slugify # for edit
-
+#from ckeditor_widget.widgets import CKEditorWidget
+from ckeditor.fields import RichTextField,RichTextFormField
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 @python_2_unicode_compatible
 class Post(models.Model):
 	title = models.CharField('TITLE', max_length=50)
 	slug = models.SlugField('SLUG', unique=True, allow_unicode = True, help_text='one word for title alias')
 	description = models.CharField('DESCRIPTION', max_length=100, blank=True, help_text='simple description text')
-	content = models.TextField('CONTENT')
+	#content = models.TextField('CONTENT')
+	content = RichTextUploadingField()
 	create_date = models.DateTimeField('Create Date', auto_now_add=True)
 	modify_date = models.DateTimeField('Modify Date', auto_now=True)
 	tag = TagField() # tagging

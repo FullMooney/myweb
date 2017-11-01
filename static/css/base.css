@@ -189,3 +189,26 @@ table.change-list, table.change-list th, table.change-list td {
 	color: #ffffff;
 	text-decoration: none !important;
 }
+
+
+
+.content-container{
+	background:rgba(0,46,122,1);
+	width:100%;
+	margin-top:10px;
+	padding:5px;
+	position:relative;
+	font-size:12px;
+	font-family:"Malgun Gothic", "맑은 고딕", arial, dotum, gulim;
+	cursor: pointer;
+}
+
+.fl_left{
+	position: relative;
+	float: left;
+}
+
+.fl_right{
+	position: relative;
+	float: right;
+}

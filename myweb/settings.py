@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import psycopg2
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -43,7 +44,10 @@ INSTALLED_APPS = [
     'disqus',                        # comment
     'django.contrib.sites',          # comment
     'photo.apps.PhotoConfig',        # photo
-    'rss.apps.RssConfig'             #rss
+    'rss.apps.RssConfig',            # rss
+    'ckeditor',                      # editor
+    'ckeditor_uploader',             # editor
+    
 ]
 
 DISQUS_WEBSITE_SHORTNAME = 'python-study-group' # comment
@@ -85,8 +89,12 @@ WSGI_APPLICATION = 'myweb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'pyblog',
+        'USER': 'admin',
+        'PASSWORD': 'admin12!',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -140,3 +148,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #add
 #LOGIN_URL='/accounts/login/'
 #LOGOUT_URL ='/accounts/logout/'
 LOGIN_REDIRECT_URL = '/'
+
+#CKEDITOR_FILENAME_GENERATOR = 'utils.get_filename'
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+
+IMAGE_QUALITY = 40
+THUMBNAIL_SIZE = (300, 300)

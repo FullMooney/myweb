@@ -7,6 +7,14 @@
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+<script type="text/javascript">
+	function fn_write(){
+		document.location.href = "add";
+
+	}
+</script>
 
 </head>
 
@@ -36,7 +44,7 @@
 		<li><a href="{% url 'blog:index' %}">Blog</a></li>
 		<li><a href="{% url 'photo:index' %}">Photo</a></li>
 
-		<li><a href="#">Add &bigtriangledown;</a>
+		<!-- <li><a href="#">Add &bigtriangledown;</a>
 			<ul>
 				<li><a href="{% url 'bookmark:add' %}">BookMark</a></li> 
 				<li><a href="{% url 'blog:add' %}">Post</a></li>
@@ -51,7 +59,7 @@
 				<li><a href="{% url 'photo:album_change' %}">Album</a></li>
 				<li><a href="{% url 'photo:photo_change' %}">Photo</a></li>
 			</ul>
-		</li>
+		</li> -->
 
 		<!-- <li><a href="{% url 'blog:post_archive' %}">Archive</a></li> -->
 		<!-- <li><a href="{% url 'blog:search' %}">Search</a></li> -->
