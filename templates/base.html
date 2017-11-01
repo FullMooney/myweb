@@ -52,21 +52,22 @@
 				<li><a href="{% url 'photo:photo_add' %}">Photo</a></li>
 			</ul>
 		</li>
-		<li><a href="#">Change &bigtriangledown;</a>
+		-->
+		<!-- <li><a href="#">Change &bigtriangledown;</a>
 			<ul>
 				<li><a href="{% url 'bookmark:change' %}">BookMark</a></li>
 				<li><a href="{% url 'blog:change' %}">Post</a></li>
 				<li><a href="{% url 'photo:album_change' %}">Album</a></li>
 				<li><a href="{% url 'photo:photo_change' %}">Photo</a></li>
 			</ul>
-		</li> -->
+		</li>  -->
 
 		<!-- <li><a href="{% url 'blog:post_archive' %}">Archive</a></li> -->
 		<!-- <li><a href="{% url 'blog:search' %}">Search</a></li> -->
 		<li><a href="{% url 'admin:index' %}">Admin</a></li>
 	</div>
 
-	<div style="height: 20px;background:rgba(0,46,122,1);"></div>
+	<div style="height: 20px;background:rgba(0,46,122,1); padding-left: 5px;width: 100%;"></div>
 
 	{% block content %}{% endblock %}
 

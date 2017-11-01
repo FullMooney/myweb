@@ -6,6 +6,12 @@
 {% block extrastyle %}{% static "photo/photo.css" %}{% endblock %}
 
 {% block content %}
+<script type="text/javascript">
+	function fn_move(todo, itemId){
+		document.location.href="../" + itemId + "/" + todo;
+	}
+
+</script>
 <div id ="content">
 
 	<h2>{{ object.title}}</h2>
@@ -33,6 +39,13 @@
 			</td>
 		</tr>
 	</table>
+	<hr style="margin: 5px 0;">
+	<div class="fl_right">	
+		<div class="content-container" style="position: relative;" onclick="fn_move('delete', {{object.id }});"><fieldset><h3 style="text-align:center;color:rgba(252,10,50,1);">삭제</h3></fieldset></div> 
+	</div>
+	<div class="fl_right">	
+		<div class="content-container" style="position: relative;" onclick="fn_move('update', {{object.id }});"><fieldset><h3 style="text-align:center;color:rgba(252,217,36,1);">편집</h3></fieldset></div> 
+	</div>
 
 </div>
 {% endblock %}

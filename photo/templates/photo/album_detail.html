@@ -6,8 +6,19 @@
 {% block extrastyle %}{% static "photo/photo.css" %}{% endblock %}
 
 {% block content %}
-<div id ="content">
+<script type="text/javascript">
+	function fn_move(todo, itemId){
+		document.location.href="../" + itemId + "/" + todo;
+	}
 
+</script>
+<div id ="content">
+	<div class="fl_right">	
+		<div class="content-container" style="position: relative;" onclick="fn_move('delete', {{object.id }});"><fieldset><h3 style="text-align:center;color:rgba(252,10,50,1);">삭제</h3></fieldset></div> 
+	</div>
+	<div class="fl_right">	
+		<div class="content-container" style="position: relative;" onclick="fn_move('update', {{object.id }});"><fieldset><h3 style="text-align:center;color:rgba(252,217,36,1);">편집</h3></fieldset></div> 
+	</div>
 	<div class="clear_float">
 		<h2 style="display:inline;">{{ object.name}}</h2>
 		&emsp;
@@ -26,7 +37,6 @@
 			<li>{{ photo.upload_date|date:"Y-m-d" }}</li>
 		</div>
 		{% endfor %}
-	</div>
-
+	</div>	
 </div>
 {% endblock %}

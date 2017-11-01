@@ -82,6 +82,10 @@
 	cursor: pointer;
 }
 
+.fl_left{
+	position: relative;
+	float: left;
+}
 
 .fl_right{
 	position: relative;
