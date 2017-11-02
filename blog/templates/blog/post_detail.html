@@ -28,7 +28,8 @@
 			var s= document.getElementById("cont1").innerHTML;
 			var e = document.createElement('div');
   			e.innerHTML = s;
-  			document.getElementById("cont1").innerHTML = e.childNodes[0].nodeValue;
+  			var htm = e.childNodes[0].nodeValue;
+  			document.getElementById("cont1").innerHTML = htm;
 
 		</script>
 		<div>
