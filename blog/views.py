@@ -29,7 +29,11 @@ class PostLV(ListView):
 	model=Post
 	template_name = 'blog/post_all.html'
 	context_object_name = 'posts'
+<<<<<<< HEAD
 	paginate_by = 4
+=======
+	paginate_by = 5
+>>>>>>> e8e9d0105de3d186520d4464c4dc2f7f7fe975d2
 
 class PostTOL(TaggedObjectList):
 	model = Post

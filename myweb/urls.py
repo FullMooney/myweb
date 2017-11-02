@@ -39,5 +39,5 @@ urlpatterns = [
 	# Class-based view for bookmark app
 	#url(r'^bookmark/$', BookmarkLV.as_view(), name='index'),
 	#url(r'^bookmark/(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail')
-
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')), # ckeditor
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) # add for photo

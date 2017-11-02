@@ -13,6 +13,8 @@ div#header {
 	position: relative;
 	top: 0px;
 	left: 0px;
+	padding-top: 5px;
+	padding-left: 5px;
 	height: 30px;
 	width: 100%;
 	display: table;
@@ -24,7 +26,9 @@ div#menu {
 	left: 0px;
 	height: 30px;
 	width: 100%;
-	display: table;
+	padding-top: 10px;
+	padding-left: 5px;
+	/*display: table;*/
 	table-layout: fixed;
 	border-spacing: 40px 0px;	
 	/*background: rgba(252,217,36,1);*/
@@ -188,4 +192,27 @@ table.change-list, table.change-list th, table.change-list td {
 .weather{
 	color: #ffffff;
 	text-decoration: none !important;
+}
+
+
+
+.content-container{
+	background:rgba(0,46,122,1);
+	width:100%;
+	margin-top:10px;
+	padding:5px;
+	position:relative;
+	font-size:12px;
+	font-family:"Malgun Gothic", "맑은 고딕", arial, dotum, gulim;
+	cursor: pointer;
+}
+
+.fl_left{
+	position: relative;
+	float: left;
+}
+
+.fl_right{
+	position: relative;
+	float: right;
 }

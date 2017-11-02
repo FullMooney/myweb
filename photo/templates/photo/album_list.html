@@ -6,8 +6,20 @@
 {% block extrastyle %}{% static "photo/photo.css" %}{% endblock %}
 
 {% block content %}
-<div id ="content">
+<script type="text/javascript">
+	function fn_add(target){
+		document.location.href= target + "/add";
+	}
 
+</script>
+<div id ="content">
+	<div class="fl_right">	
+		<div class="content-container" style="position: relative;" onclick="fn_add('photo');"><fieldset><h3 style="text-align:center;color:rgba(252,217,36,1);">사진추가</h3></fieldset></div> <!-- write -->	
+	</div>
+    <div class="fl_right">	
+		<div class="content-container" style="position: relative;" onclick="fn_add('album');"><fieldset><h3 style="text-align:center;color:rgba(252,217,36,1);">앨범추가</h3></fieldset></div> 
+	</div>	
+	<div class="gap10r"></div>
 	{% for item in object_list %}
 
 	<div class="clear_float">
@@ -28,7 +40,7 @@
 		{% endfor %}
 	</div>
 
-	{% endfor %}
-
+	{% endfor %}	
+	
 </div>
 {% endblock %}

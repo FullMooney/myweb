@@ -1,6 +1,7 @@
 /* album_list.html */
-div.albu-list {
+div.album-list {
 	margin: 20px 50px;
+	position: relative;
 }
 
 div.album-list-photo {
@@ -52,4 +53,31 @@ img.thumbnail {
 
 div.clear_float {
 	clear: both;
+}
+
+.content-container{
+	background:rgba(0,46,122,1);
+	width:100%;
+	margin-top:5px;
+	padding:5px;
+	position:relative;
+	font-size:12px;
+	font-family:"Malgun Gothic", "맑은 고딕", arial, dotum, gulim;
+	cursor: pointer;
+}
+
+.fl_left{
+	position: relative;
+	float: left;
+}
+
+.fl_right{
+	position: relative;
+	float: right;
+	padding-right: 3%;
+}
+
+.gap10r{
+	position: relative;
+	margin-top: 10px;
 }

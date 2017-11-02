@@ -2,7 +2,11 @@
 
 {% block title %}post_form.html{% endblock %}
 {% load staticfiles %}
+
 {% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block extrahead %}<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>{{ block.super }}{% endblock %}
+
 {% block content %}
 	<div id="content">
 		<h1>Post Create/Update - {{user}}</h1>

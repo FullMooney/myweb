@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url,include
 from blog.views import *
 
 urlpatterns = [
@@ -47,4 +47,6 @@ urlpatterns = [
 
 	# Example: /99/delete/
 	url(r'^(?P<pk>[0-9]+)/delete/$', PostDeleteView.as_view(), name="delete"),
+
+	url(r'^ckeditor/', include('ckeditor_uploader.urls')), # ckeditor
 ]

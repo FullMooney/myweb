@@ -3,20 +3,24 @@
 {% block title %} BookMark List {% endblock %}
 
 {% block content %}
-	<div id="content">
+<div id="content">
 	<h1>Bookmark List</h1>
 	
 	<div class="bookmark-list">
-	{% for bookmark in object_list %}
-	<ul>
-		<li>
-		<div class="cont_post">
-			<h2><a href="{% url 'bookmark:detail' bookmark.id %}" class="txt_wrap">{{bookmark}}</a></h2>			
+		{% for bookmark in object_list %}
+		<ul>
+			<li>
+			<div class="cont_post">
+				<h2><a href="{% url 'bookmark:detail' bookmark.id %}" class="txt_wrap">{{bookmark}}</a></h2>			
+			</div>
+			</li>
+		</ul>
+		{% endfor %}
+		<hr style="margin: 5px 0;">
+		<div class="fl_right">	
+			<div class="content-container" onclick="fn_write();"><fieldset><h3 style="text-align:center;color:rgba(252,217,36,1);">즐겨찾기 추가</h3></fieldset></div> <!-- write -->
 		</div>
-		</li>
-	</ul>
-	{% endfor %}
 	</div>
 
-	</div>
+</div>	
 {% endblock %}
