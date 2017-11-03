@@ -3,6 +3,7 @@
 {% block title %}home.html{% endblock %}
 
 {% load staticfiles %}
+{% load stock_filter %}
 {% block extrastyle %}{% static "css/home.css" %}{% endblock %}
 
 {%block content %}
@@ -58,7 +59,7 @@
 
 		<div id="stock_cont">
 		<h4><b>투자정보</b></h4>
-			<span style="color: #ff0000;">KOSPI : 2490.25</span>
+			<span style="color: #ff0000;">KOSPI : {{ '^KOSPI'|get_price }}</span>
 			<div class="gap10"></div>
 			<span style="color: #ff0000;">KOSPI : 2490.25</span>
 			<div class="gap10"></div>

@@ -77,6 +77,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+        'libraries': {
+                'stock_filter': 'home.templatetags.stock_filter',
+
+            }
         },
     },
 ]
@@ -93,7 +97,7 @@ DATABASES = {
         'NAME': 'pyblog',
         'USER': 'admin',
         'PASSWORD': 'admin12!',
-        'HOST': 'localhost',
+        'HOST': '0.0.0.0',
         'PORT': '5432',
     }
 }
