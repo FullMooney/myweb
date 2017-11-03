@@ -77,13 +77,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-<<<<<<< HEAD
-            'libraries': {
-=======
         'libraries': {
->>>>>>> e8e9d0105de3d186520d4464c4dc2f7f7fe975d2
                 'stock_filter': 'home.templatetags.stock_filter',
-
             }
         },
     },
