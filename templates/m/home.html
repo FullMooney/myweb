@@ -56,7 +56,7 @@
 		<div >
 			<fieldset>
 				<legend>SEARCH</legend>
-				<form action="blog/search/" method="post"> {% csrf_token %}
+				<form action="../blog/search/" method="post"> {% csrf_token %}
 					<input class="search_area" type="text" placeholder="학습조직 블로그 검색" name="search_word" value="" />
 					<input class="btn_search"  type="submit" src="{% static 'img/magnifying-glass.png' %}" value=">>" />
 				</form>
