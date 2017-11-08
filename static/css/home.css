@@ -77,6 +77,32 @@ div#homeimg > h4{
 	height: 120px;
 }
 
+.blog-list_mobi{
+	position: relative;
+	max-width: 1060px;
+	overflow: hidden;
+	margin: 0 0 30px 0;
+}
+
+.cont_post_mobi{
+	position: relative;
+	max-width: 700px;
+	height: 154px;
+	padding-right: 220px;
+	border-bottom: 1px solid #ededed;	
+	overflow: hidden;
+	text-overflow: ellipsis;	
+	white-space: normal;
+}
+
+.cont_img_mobi{
+	position: absolute;
+	top: 10px;
+	right: 0px;
+	width: 170px;
+	height: 120px;
+}
+
 
 .tag-cloud{
 	width: 276px;
@@ -102,7 +128,6 @@ div#homeimg > h4{
 	overflow: hidden;
 	text-overflow: ellipsis;	
 }
-
 
 .container{
 	position: relative;

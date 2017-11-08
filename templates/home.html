@@ -11,6 +11,12 @@
 	<img src="{% static 'img/pycon2017.png' %}" style="align-content:center;width: 490px;height: 291px;" />
 	<h4 >"Life is short, You need Python"</h4>
 </div>
+<script type="text/javascript">
+	if (/Mobi/.test(navigator.userAgent)) {
+    // mobile!
+    	document.location.href="m/";
+	}
+</script>
 <div id="content_home">
 	
 	<hr style="margin: 5px 0;">
@@ -59,11 +65,9 @@
 
 		<div id="stock_cont">
 		<h4><b>투자정보</b></h4>
-			<span style="color: #ff0000;">KOSPI : {{ '^KOSPI'|get_price }}</span>
+			<span style="color: #ff0000;">KOSPI : {{ '000660.KS'|get_price }}</span>
 			<div class="gap10"></div>
-			<span style="color: #ff0000;">KOSPI : 2490.25</span>
-			<div class="gap10"></div>
-			<span style="color: #ff0000;">KOSPI : 2490.25</span>
+			<span style="color: #ff0000;">KOSPI : {{ '^KOSPI'|get_price }}</span>			
 		</div>
 
 		<div class="gap40"></div>
@@ -76,6 +80,7 @@
 			<a href="{% url 'blog:tagged_object_list' tag.name %}">&nbsp;{{tag.name}}&nbsp;</a>
 		</span> 
 		{% endfor %}
+		
 	</div>	
 
 	

@@ -17,6 +17,11 @@ class HomeView(ListView):
 	model = Post
 	template_name = 'home.html'	
 	context_object_name = 'posts'
+
+class HomeMobiView(ListView):
+	model = Post
+	template_name = 'm/home.html'	
+	context_object_name = 'posts'
 	
 # add for auth
 # ---- User Creation

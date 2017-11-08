@@ -79,7 +79,6 @@ TEMPLATES = [
             ],
         'libraries': {
                 'stock_filter': 'home.templatetags.stock_filter',
-
             }
         },
     },
