@@ -18,7 +18,7 @@ from django.contrib import admin
 #from home import views
 from django.conf.urls.static import static  # add for photo
 from django.conf import settings  # add for photo
-from myweb.views import HomeView, UserCreateView, UserCreateDoneTV # for auth
+from myweb.views import HomeView, HomeMobiView, UserCreateView, UserCreateDoneTV # for auth
 
 #from bookmark.views import BookmarkLV, BookmarkDV
 
@@ -40,4 +40,7 @@ urlpatterns = [
 	#url(r'^bookmark/$', BookmarkLV.as_view(), name='index'),
 	#url(r'^bookmark/(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail')
     url(r'^ckeditor/', include('ckeditor_uploader.urls')), # ckeditor
+
+    # mobile
+    url(r'^m/', HomeMobiView.as_view(), name='mobihome'),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) # add for photo

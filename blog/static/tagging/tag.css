@@ -1,10 +1,11 @@
 .tag-cloud{
-	width: 30%;
+	width: 100%;
 	margin-left: 30px;
+	margin-top: 50px;
 	text-align: center;
 	padding: 5px;
-	border: 1px solid orange;
-	background-color: #ffc;
+	border: 0px;
+	background-color: rgba(255,255,255,0.5);
 }
 
 .tag-1 {font-size:12px; text-decoration: none !important;}

@@ -71,7 +71,8 @@ div#white{
 
 /* Header */
 .maintitle{
-	display: table-cell;
+	/*display: table-cell;*/
+	float:left;
 	vertical-align: middle;
 	padding-left: 20px;
 	color: rgba(252,217,36,1);

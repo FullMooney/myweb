@@ -11,6 +11,12 @@
 	<img src="{% static 'img/pycon2017.png' %}" style="align-content:center;width: 490px;height: 291px;" />
 	<h4 >"Life is short, You need Python"</h4>
 </div>
+<script type="text/javascript">
+	if (/Mobi/.test(navigator.userAgent)) {
+    // mobile!
+    	document.location.href="m/";
+	}
+</script>
 <div id="content_home">
 	
 	<hr style="margin: 5px 0;">
@@ -20,12 +26,30 @@
 		<div class="cont_post">
 			<h2><a href='{{ post.get_absolute_url }}' class="txt_wrap">{{post.title}} - {{post.modify_date|date:"N d, Y"}}</a></h2>
 			<div class="cont_img">				
-				<a href="{{ post.get_absolute_url }}"><img width="100%" height="100%" src="/static/img/post_tmp.jpg" /></a>
+				<a href="{{ post.get_absolute_url }}"><img id="img{{ post.id }}" src="" style="width: 170px; height: 130px;" /></a>
 			</div>
-			<p class="txt_shorten">{{ post.content }}</p>											
+			<div class="txt_shorten" id="{{ post.id }}">{{ post.content }}</div>	
 		</div>		
-		{% endfor %}	
-		
+		<script type="text/javascript">
+			/**리스트에 img thumbnail 넣기 */
+			var s =	$("#{{ post.id }}").html();			
+			var e = document.createElement('div');
+			e.innerHTML = s;
+			var htm = e.childNodes[0].nodeValue;
+			e.innerHTML = htm;
+			var str = e.getElementsByTagName("img")[0];
+			if( e.getElementsByTagName("img")[0] != "undefined" && e.getElementsByTagName("img")[0] != undefined ){
+				var src = e.getElementsByTagName("img")[0].outerHTML;
+				var tgt = document.getElementById("img{{ post.id }}");
+				tgt.src = e.getElementsByTagName("img")[0].src;
+				
+			}
+
+			/**리스트에서 img 태그 제거 */
+			var txt = $("#{{ post.id }}").text();
+			$("#{{ post.id }}").text('').append(txt).find('img').remove().end().text();
+		</script>
+		{% endfor %}
 	</div>
 	<div class="tag-cloud">
 
@@ -41,11 +65,9 @@
 
 		<div id="stock_cont">
 		<h4><b>투자정보</b></h4>
-			<span style="color: #ff0000;">KOSPI : {{ '^KOSPI'|get_price }}</span>
+			<span style="color: #ff0000;">KOSPI : {{ '000660.KS'|get_price }}</span>
 			<div class="gap10"></div>
-			<span style="color: #ff0000;">KOSPI : 2490.25</span>
-			<div class="gap10"></div>
-			<span style="color: #ff0000;">KOSPI : 2490.25</span>
+			<span style="color: #ff0000;">KOSPI : {{ '^KOSPI'|get_price }}</span>			
 		</div>
 
 		<div class="gap40"></div>
@@ -58,6 +80,7 @@
 			<a href="{% url 'blog:tagged_object_list' tag.name %}">&nbsp;{{tag.name}}&nbsp;</a>
 		</span> 
 		{% endfor %}
+		
 	</div>	
 
 	
