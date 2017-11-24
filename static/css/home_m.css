@@ -2,7 +2,7 @@ div#content_home{
 	position: relative;
 	top: 20px;
 	width: 80%;
-	left: 150px;
+	left: 10%;
 	max-width: 1100px;
 	clear: both;
 }
@@ -62,7 +62,7 @@ div#homeimg > h4{
 	position: relative;
 	max-width: 900px;
 	height: 154px;
-	padding-right: 220px;
+	padding-right: 0;
 	border-bottom: 1px solid #ededed;	
 	overflow: hidden;
 	text-overflow: ellipsis;	

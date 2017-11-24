@@ -5,7 +5,7 @@
 {% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
 {% block content %}
 	<div id="content">
-		<h1>Bookmark Create/Update - {{user}}</h1>
+		<h1>즐겨찾기 추가/삭제 - {{user}}</h1>
 
 		<form action="." method="post">{% csrf_token %}
 
@@ -13,7 +13,7 @@
 			<p class="errornote">Wrong! Please correct the error(s) below.</p>
 			{% endif %}
 
-			<p>This is a creation or update form for your bookmark.</p>
+			<p>즐겨찾기를 추가 또는 삭제 합니다.</p>
 
 			<fieldset class="aligned">
 				
@@ -23,6 +23,9 @@
 				<div class="form-row">
 					{{ form.url.label_tag }} {{ form.url }}
 				</div>
+
+				<input type="hidden" name="visiters" value="0" />				
+				
 			</fieldset>
 
 			<div class="submit-row">

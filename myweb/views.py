@@ -22,6 +22,7 @@ class HomeMobiView(ListView):
 	model = Post
 	template_name = 'm/home.html'	
 	context_object_name = 'posts'
+	paginate_by = 4
 	
 # add for auth
 # ---- User Creation

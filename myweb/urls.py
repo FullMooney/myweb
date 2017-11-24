@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.conf.urls.static import static  # add for photo
 from django.conf import settings  # add for photo
 from myweb.views import HomeView, HomeMobiView, UserCreateView, UserCreateDoneTV # for auth
-
+import practice.views
 #from bookmark.views import BookmarkLV, BookmarkDV
 
 urlpatterns = [
@@ -43,4 +43,8 @@ urlpatterns = [
 
     # mobile
     url(r'^m/', HomeMobiView.as_view(), name='mobihome'),
+
+    #practice
+    url(r'^practice/', include('practice.urls', namespace='practice')),
+    
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) # add for photo

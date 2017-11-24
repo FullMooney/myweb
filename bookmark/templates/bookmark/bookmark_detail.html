@@ -3,11 +3,32 @@
 {% block title %} BookMark Detail {% endblock %}
 
 {% block content %}
+<script type="text/javascript">
+	function fn_increase(id){
+	var token = $('input[name=csrfmiddlewaretoken]').val();	
+	$.post('/bookmark/visiters', { 'id': '{{object.id}}'
+		                           ,'csrfmiddlewaretoken': token
+		                         }, 
+									function(data, status){
+										if(data.status == 'error'){
+											alert('hitcount error');
+										}
+									},
+									'json'
+	      );
+
+	}
+
+
+</script>
 	<div id="content">
 		<h1>{{ object.title}}</h1>
 
 		<ul>
-			<li>URL: <a href="{{object.url}}" target="_blank">{{ object.url }} </a></li>
+			<li>URL: <a href="{{object.url}}" target="_blank" onclick="fn_increase('{{object.id}}')">{{ object.url }} </a></li>
 		</ul>
 	</div>
+	<form id="hitcount" action="/bookmark/visiters" method="post"> {% csrf_token %}
+		<input type="hidden" name="id" value="{{object.id}}" />				
+	</form>
 {% endblock %}

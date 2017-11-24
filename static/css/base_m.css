@@ -12,11 +12,12 @@ h4{
 div#header {
 	position: relative;
 	top: 0px;
-	left: 0px;
-	padding-top: 5px;
+	left: 0px;	
 	padding-left: 5px;
+	padding-top: 5px;
 	height: 30px;
 	width: 100%;
+	min-width: 700px;
 	display: table;
 	background: rgba(0,46,122,1);
 }
@@ -74,26 +75,24 @@ div#white{
 	/*display: table-cell;*/
 	float:left;
 	vertical-align: middle;
-	padding-left: 20px;
 	color: rgba(252,217,36,1);
 	font-weight: bold;
 	font-size: 22px;
 	border: 2px solid rgba(252,217,36,1);
 	border-radius: 25px;
-	width: 290px;	
+	width: 30%;	
+	min-width: 290px;
 	height: 30px;
 	text-decoration: none !important;
 }
 
 .welcome{
-	display: table-cell;
+	width:100%;
 	vertical-align: middle;
 	text-align: right;
-	padding-left: 20px;
 	color: rgba(252,217,36,1);
 	font-weight: normal;
-	font-size: 18px;
-	width: 400px;
+	font-size: 18px;	
 }
 
 .welcome a:link, .welcome a:visited{
@@ -137,6 +136,62 @@ div#menu li ul{
 }
 
 div#menu li:hover ul {
+	display: block;	
+}
+
+/* userarea */
+
+div#userarea {
+	position: relative;
+	float: right;
+	left: 0px;
+	height: 30px;
+	width: 30%;	
+	padding-left: 5px;
+	/*display: table;*/
+	table-layout: fixed;
+	border-spacing: 40px 0px;	
+	/*background: rgba(252,217,36,1);*/
+	background: rgba(0,46,122,1);
+	font-size: 14px;
+
+}
+div#userarea a:link, div#userarea a:visited {
+	color: rgba(252,217,36,1);
+	text-decoration: none !important;
+	font-size: 20px;
+}
+
+div#userarea a:hover {
+	color: rgba(252,217,36, 0.8);
+	text-decoration: none !important;
+}
+
+div#userarea > li {
+	display: table-cell;
+	vertical-align: middle;
+	/*border: 2px solid rgba(252,217,36,1);*/
+	border: 0px solid rgba(252,217,36,1);
+	border-radius: 25px;
+	text-align: center;
+	font-weight: bold;
+}
+
+/* pulldown menu */
+div#userarea li ul{
+	display: none;
+	position: relative;
+	margin: 0;
+	padding: 10px 10px 5px 10px;
+	list-style: none;
+	border-right: 1px solid rgba(0,46,122,1);
+	border-left: 1px solid rgba(0,46,122,1);
+	border-bottom: 1px solid rgba(0,46,122,1);
+	background: rgba(0,0,0,0.4);
+	z-index: 1;	
+}
+
+div#userarea li:hover ul {
 	display: block;	
 }
 

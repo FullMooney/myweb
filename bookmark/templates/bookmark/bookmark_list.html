@@ -4,7 +4,7 @@
 
 {% block content %}
 <div id="content">
-	<h1>Bookmark List</h1>
+	<h1>즐겨찾기 목록</h1>
 	
 	<div class="bookmark-list">
 		{% for bookmark in object_list %}
@@ -20,6 +20,32 @@
 		<div class="fl_right">	
 			<div class="content-container" onclick="fn_write();"><fieldset><h3 style="text-align:center;color:rgba(252,217,36,1);">즐겨찾기 추가</h3></fieldset></div> <!-- write -->
 		</div>
+	</div>
+
+	<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
+		<script type="text/javascript">
+	        $.get('/bookmark/data.json', function(jsondata) {
+	            Highcharts.chart('container', {
+	               chart: {
+	                    type: 'column'	                    
+	                },
+	                title: {
+	                	text: ''
+	                },
+					yAxis: {
+				        min: 0,
+				        title: {
+				            text: 'hits'
+				        }
+				    },
+				    xAxis:{
+				    	categories:['접속횟수'],
+				    	crosshair: true
+				    },
+	                series: jsondata
+	            });
+	        });
+	    </script>
 	</div>
 
 </div>	
