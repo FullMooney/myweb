@@ -9,15 +9,15 @@
 
 {% block content %}
 	<div id="content">
-		<h1>Post Create/Update - {{user}}</h1>
+		<h1>Post 등록/편집 - {{user}}</h1>
 
-		<form action="." method="post">{% csrf_token %}
+		<form action="." method="post" id="submitrow">{% csrf_token %}
 
 			{% if form.errors %}
 			<p class="errornote">Wrong! Please correct the error(s) below.</p>
 			{% endif %}
 
-			<p>This is a creation or update form for your post.</p>
+			<p>포스트를 등록 또는 편집 합니다.</p>
 
 			<fieldset class="aligned">
 				
@@ -38,8 +38,8 @@
 				</div>
 			</fieldset>
 
-			<div class="submit-row">
-				<input type="submit" value="Submit" />
+			<div class="fl_right">	
+				<div class="content-container" onclick="fn_submit();"><fieldset><h3 style="text-align:center;color:rgba(252,217,36,1);">제출</h3></fieldset></div> <!-- write -->	
 			</div>
 
 			<script type="text/javascript">document.getElementById('id_title').focus();</script>

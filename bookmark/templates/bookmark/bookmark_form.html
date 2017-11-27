@@ -7,7 +7,7 @@
 	<div id="content">
 		<h1>즐겨찾기 추가/삭제 - {{user}}</h1>
 
-		<form action="." method="post">{% csrf_token %}
+		<form action="." id="submitrow" method="post">{% csrf_token %}
 
 			{% if form.errors %}
 			<p class="errornote">Wrong! Please correct the error(s) below.</p>
@@ -27,9 +27,9 @@
 				<input type="hidden" name="visiters" value="0" />				
 				
 			</fieldset>
-
-			<div class="submit-row">
-				<input type="submit" value="Submit" />
+			
+			<div class="fl_right">	
+				<div class="content-container" onclick="fn_submit();"><fieldset><h3 style="text-align:center;color:rgba(252,217,36,1);">제출</h3></fieldset></div> <!-- write -->	
 			</div>
 
 			<script type="text/javascript">document.getElementById('id_title').focus();</script>

@@ -4,11 +4,13 @@
 
 {% block content %}
 	<div id="content">
-		<h1>Album Delete</h1>
+		<h1>앨범 삭제</h1>
 
 		<form action="." method="post">{% csrf_token %}
-			<p>Are you sure you want to delete "{{ object }}" ? </p>
-			<input type="submit" value="Confirm" />
+			<p>다음 앨범을 정말로 삭제하겠습니까 - "{{ object }}" ? </p>
+			<div class="fl_left">	
+			<div class="content-container" onclick="fn_submit();"><fieldset><h3 style="text-align:center;color:rgba(252,217,36,1);">확인</h3></fieldset></div> <!-- write -->	
+		</div>
 		</form>
 	</div>
 {% endblock %}
