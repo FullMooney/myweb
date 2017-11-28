@@ -6,11 +6,11 @@
 {% block extrastyle %}{% static "tagging/tag.css" %}{% endblock %}
 
 {% block content %}
-<div class="blog-list">
+<div class="blog-list" id="blog-list">
 	{% for post in posts %}
-		<div class="cont_post">
+		<div class="cont_post" id="post{{ post.id }}">
 			<h2><a href='{{ post.get_absolute_url }}' class="txt_wrap">{{post.title}}</a></h2>
-			<div class="cont_img">				
+			<div id="cont_img" class="cont_img">				
 				<a href="{{ post.get_absolute_url }}"><img id="img{{ post.id }}" src="" style="width: 100%; height: auto;" /></a>
 			</div>
 			<div id="{{ post.id }}" class="">{{ post.content }}</div>								
@@ -23,14 +23,19 @@
 			e.innerHTML = s;
 			var htm = e.childNodes[0].nodeValue;
 			e.innerHTML = htm;
-			var str = e.getElementsByTagName("img")[0];
-			if( e.getElementsByTagName("img")[0] != "undefined" && e.getElementsByTagName("img")[0] != undefined ){
-				var src = e.getElementsByTagName("img")[0].outerHTML;
-				var tgt = document.getElementById("img{{ post.id }}");
-				tgt.src = e.getElementsByTagName("img")[0].src;
-				
+			if(!(/Mobi/.test(navigator.userAgent))){
+				var str = e.getElementsByTagName("img")[0];
+				if( e.getElementsByTagName("img")[0] != "undefined" && e.getElementsByTagName("img")[0] != undefined ){
+					var src = e.getElementsByTagName("img")[0].outerHTML;
+					var tgt = document.getElementById("img{{ post.id }}");
+					tgt.src = e.getElementsByTagName("img")[0].src;
+					
+				}
+			}else{
+				$("#cont_img").remove();
+				$("#post{{ post.id }}").css("width", "100%");
+				$("#blog-list").css("width", "80%");
 			}
-
 			/**리스트에서 img 태그 제거 */
 			var txt = $("#{{ post.id }}").text();
 			$("#{{ post.id }}").text('').append(txt).find('img').remove().end().text();
@@ -39,13 +44,15 @@
 
 	<div style="height: 10px;"></div>
 
-	<div style="text-align: center;">
+	<div style="text-align: center;font-size: 22px;">
 			<span>
 			{% if page_obj.has_previous  %}
 				<a href="?page={{ page_obj.previous_page_number }}">◀</a>
 			{% endif  %}
 
+			{% if page_obj.has_previous or page_obj.has_next  %}
 			{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+			{% endif %}
 
 			{% if page_obj.has_next  %}
 				<a href="?page={{ page_obj.next_page_number }}">▶</a>

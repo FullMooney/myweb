@@ -29,7 +29,7 @@
 
 <body>
 	<div id="header">
-		<a href="{% url 'home' %}" id="gohome" style="width: 220px;"><h2 class="maintitle">파이썬학습조직-기술블로그</h2></a>
+		<a href="{% url 'home' %}" id="gohome" style="width: 220px;"><h2 class="maintitle" id="maintitle">파이썬학습조직-기술블로그</h2></a>
 		<script type="text/javascript">
 			if (/Mobi/.test(navigator.userAgent)) {
     		// mobile!
@@ -41,11 +41,13 @@
 		{% if user.is_active %}
 		<h4 class="welcome">환영합니다, 
 			<strong>{% firstof user.get_short_name user.get_username %}</strong>
+			<br />
 			<a href="{% url 'password_change' %}">비밀번호 변경</a> / 
 			<a href="{% url 'logout' %}">로그아웃</a>
 		</h4>
 		{% else %}
 		<h4 class="welcome">방문을 환영합니다.
+			<br />
 			<a href="{% url 'login' %}">로그인</a> / 
 			<a href="{% url 'register' %}">등록하기 </a>
 		</h4>
@@ -107,10 +109,11 @@
 </body>
 
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(document).finish(function(){
 		if (/Mobi/.test(navigator.userAgent)) {
 			$('head').append('<link rel="stylesheet" title="basecss_m" type="text/css" href="{% static 'css/base_m.css' %}" />');
 			$('link[title="basecss"]').remove();
+			$('maintitle').text("파이썬학습조직");
 		}
 	});
 </script>
