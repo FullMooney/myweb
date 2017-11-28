@@ -8,7 +8,8 @@ register = template.Library()
 
 @register.filter(name="get_price")
 def get_price(value):
+#    jongmok = Share('YHOO')
     #jongmok = Share('YHOO')
-    return value
-#    jongmok = Share('000660.KS')
-#    return "%s"%jongmok.get_price()
+     return value
+#   jongmok = Share('000660.KS')
+#   return "%s"%jongmok.get_price()
