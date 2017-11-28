@@ -6,7 +6,8 @@
 <title>{% block title %} Django Web Programming {% endblock %} </title>
 
 {% load staticfiles %}
-<link rel="stylesheet" title="basecss" type="text/css" href="{% static 'css/base.css' %}" />
+
+<!-- <link rel="stylesheet" title="basecss" type="text/css" href="{% static 'css/base.css' %}" /> -->
 <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
@@ -15,6 +16,13 @@
 <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
 <script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
+<script type="text/javascript">
+	if((/Mobi/.test(navigator.userAgent))) {
+		$('head').append('<link rel="stylesheet" title="basecss_m" type="text/css" href="{% static 'css/base_m.css' %}" />');
+	}else{
+		$('head').append('<link rel="stylesheet" title="basecss_m" type="text/css" href="{% static 'css/base.css' %}" />');
+	}
+</script>
 <script type="text/javascript">
 	function fn_write(){
 		document.location.href = "add";
@@ -109,12 +117,12 @@
 </body>
 
 <script type="text/javascript">
-	$(document).finish(function(){
-		if (/Mobi/.test(navigator.userAgent)) {
+	/*$(document).load(function(){
+		if(/Mobi/.test(navigator.userAgent)) {
 			$('head').append('<link rel="stylesheet" title="basecss_m" type="text/css" href="{% static 'css/base_m.css' %}" />');
 			$('link[title="basecss"]').remove();
-			$('maintitle').text("파이썬학습조직");
+			$('#maintitle').text("파이썬학습조직");
 		}
-	});
+	});*/
 </script>
 </html>
