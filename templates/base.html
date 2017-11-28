@@ -6,15 +6,22 @@
 <title>{% block title %} Django Web Programming {% endblock %} </title>
 
 {% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+<link rel="stylesheet" title="basecss" type="text/css" href="{% static 'css/base.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 <script type="text/javascript" src="{% static 'ckeditor/galleriffic/js/jquery-1.3.2.js' %}"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+<script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
 <script type="text/javascript">
 	function fn_write(){
 		document.location.href = "add";
 
+	}
+	function fn_submit(){
+		$('#submitrow').submit();
 	}
 </script>
 
@@ -25,31 +32,50 @@
 		<a href="{% url 'home' %}" id="gohome" style="width: 220px;"><h2 class="maintitle">파이썬학습조직-기술블로그</h2></a>
 		<script type="text/javascript">
 			if (/Mobi/.test(navigator.userAgent)) {
-    	// mobile!
+    		// mobile!
     			$('#gohome').attr("href","{% url 'mobihome' %}");
 			}
 		</script>
 		<h4 class="welcome"><a href="#" class="weather">미세먼지/날씨 H4</a></h4>
 				
 		{% if user.is_active %}
-		<h4 class="welcome">Welcome, 
+		<h4 class="welcome">환영합니다, 
 			<strong>{% firstof user.get_short_name user.get_username %}</strong>
-			<a href="{% url 'password_change' %}">Change Password</a> / 
-			<a href="{% url 'logout' %}">Logout </a>
+			<a href="{% url 'password_change' %}">비밀번호 변경</a> / 
+			<a href="{% url 'logout' %}">로그아웃</a>
 		</h4>
 		{% else %}
-		<h4 class="welcome">Welcome, Anonymous
-			<a href="{% url 'login' %}">Login</a> / 
-			<a href="{% url 'register' %}">Register </a>
+		<h4 class="welcome">방문을 환영합니다.
+			<a href="{% url 'login' %}">로그인</a> / 
+			<a href="{% url 'register' %}">등록하기 </a>
 		</h4>
 		{% endif %}
+
+		<!-- <div id="userarea">		
+		{% if user.is_active %}
+		<li>
+			<h4 class="welcome">환영합니다, 
+				<strong>{% firstof user.get_short_name user.get_username %}</strong>			
+			</h4>
+			<ul>
+					<li><a href="{% url 'password_change' %}">PW 변경</a></li>
+					<li><a href="{% url 'logout' %}">로그아웃</a></li>
+			</ul>
+		</li>
+		{% else %}
+		<h4 class="welcome">Welcome, Anonymous
+			<a href="{% url 'login' %}">로그인</a> / 
+			<a href="{% url 'register' %}">등록신청</a>
+		</h4>
+		{% endif %}
+		</div> -->
 		
 	</div>
 
 	<div id="menu">
-		<li><a href="{% url 'bookmark:index' %}">Bookmark</a></li>
-		<li><a href="{% url 'blog:index' %}">Blog</a></li>
-		<li><a href="{% url 'photo:index' %}">Photo</a></li>
+		<li><a href="{% url 'bookmark:index' %}">즐겨찾기</a></li>
+		<li><a href="{% url 'blog:index' %}">블로그</a></li>
+		<li><a href="{% url 'photo:index' %}">앨범</a></li>
 
 		<!-- <li><a href="#">Add &bigtriangledown;</a>
 			<ul>
@@ -71,7 +97,7 @@
 
 		<!-- <li><a href="{% url 'blog:post_archive' %}">Archive</a></li> -->
 		<!-- <li><a href="{% url 'blog:search' %}">Search</a></li> -->
-		<li><a href="{% url 'admin:index' %}">Admin</a></li>
+		<li><a href="{% url 'admin:index' %}">관리자</a></li>
 	</div>
 
 	<div style="height: 20px;background:rgba(0,46,122,1); padding-left: 5px;width: 100%;"></div>
@@ -79,4 +105,13 @@
 	{% block content %}{% endblock %}	
 	{% block footer %}{% endblock %}
 </body>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		if (/Mobi/.test(navigator.userAgent)) {
+			$('head').append('<link rel="stylesheet" title="basecss_m" type="text/css" href="{% static 'css/base_m.css' %}" />');
+			$('link[title="basecss"]').remove();
+		}
+	});
+</script>
 </html>

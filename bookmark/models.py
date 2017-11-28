@@ -11,6 +11,7 @@ class Bookmark(models.Model):
 	title = models.CharField(max_length=100, blank=True, null=True)
 	url = models.URLField('url', unique=True)
 	owner = models.ForeignKey(User, null=True) # for edit
+	visiters = models.IntegerField(blank=True, null=True, default=0)
 
 	def __str__(self):
 		return self.title

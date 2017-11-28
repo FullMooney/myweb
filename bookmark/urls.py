@@ -20,4 +20,10 @@ urlpatterns= [
 	# Example: /99/delete/
 	url(r'^(?P<pk>[0-9]+)/delete/$', BookmarkDeleteView.as_view(), name="delete"),
 
+	#chart
+    #url(r'^$', BookmarkLV.main_page),
+    url(r'^data.json$', BookmarkLV.data_json),
+
+    url(r'^visiters$', BookmarkDV.hit_count),
+
 ]

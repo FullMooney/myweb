@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rss.apps.RssConfig',            # rss
     'ckeditor',                      # editor
     'ckeditor_uploader',             # editor
+    'practice.apps.PracticeConfig',  # practice
     
 ]
 

@@ -26,7 +26,7 @@
 		<div class="cont_post">
 			<h2><a href='{{ post.get_absolute_url }}' class="txt_wrap">{{post.title}} - {{post.modify_date|date:"N d, Y"}}</a></h2>
 			<div class="cont_img">				
-				<a href="{{ post.get_absolute_url }}"><img id="img{{ post.id }}" src="" style="width: 170px; height: 130px;" /></a>
+				<a href="{{ post.get_absolute_url }}"><img id="img{{ post.id }}" src="" style="width: 100%; height: auto;" /></a>
 			</div>
 			<div class="txt_shorten" id="{{ post.id }}">{{ post.content }}</div>	
 		</div>		

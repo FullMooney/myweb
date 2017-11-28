@@ -4,12 +4,11 @@
 
 {% load staticfiles %}
 {% load stock_filter %}
-{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+{% block extrastyle %}{% static "css/home_m.css" %}{% endblock %}
 
 {%block content %}
 <div id="homeimg">
-	<img src="{% static 'img/pycon2017.png' %}" style="align-content:center;width: 295px;height: 145px;" />
-	<h4 >"Life is short, You need Python"</h4>
+	<h4 style="font-size: 50px !important">Life is short, <br />You need Python</h4>
 </div>
 <script type="text/javascript">
 	if (!(/Mobi/.test(navigator.userAgent))) {
@@ -21,36 +20,32 @@
 	
 	<hr style="margin: 5px 0;">
 
-	<div class="blog-list_mobi">
+	<div class="blog-list">
 		{% for post in posts %}
-		<div class="cont_post_mobi" >
-			<h2><a href='{{ post.get_absolute_url }}' class="txt_wrap">{{post.title}} - {{post.modify_date|date:"N d, Y"}}</a></h2>
-			<div class="cont_img_mobi">				
-				<a href="{{ post.get_absolute_url }}"><img id="img{{ post.id }}" src="" style="width: 170px; height: 120px;" /></a>
-			</div>
+		<div class="cont_post" >
+			<h2><a href='{{ post.get_absolute_url }}' class="txt_wrap">{{post.title}} - <span style="font-size: 15px;">{{post.modify_date|date:"m/d/Y"}}</span></a></h2>
 			<div class="txt_shorten" id="{{ post.id }}">{{ post.content }}</div>	
 		</div>		
 		<script type="text/javascript">
-			/**리스트에 img thumbnail 넣기 */
-			var s =	$("#{{ post.id }}").html();			
-			var e = document.createElement('div');
-			e.innerHTML = s;
-			var htm = e.childNodes[0].nodeValue;
-			e.innerHTML = htm;
-			var str = e.getElementsByTagName("img")[0];
-			if( e.getElementsByTagName("img")[0] != "undefined" && e.getElementsByTagName("img")[0] != undefined ){
-				var src = e.getElementsByTagName("img")[0].outerHTML;
-				var tgt = document.getElementById("img{{ post.id }}");
-				tgt.src = e.getElementsByTagName("img")[0].src;
-				
-			}
 
 			/**리스트에서 img 태그 제거 */
 			var txt = $("#{{ post.id }}").text();
 			$("#{{ post.id }}").text('').append(txt).find('img').remove().end().text();
 		</script>
 		{% endfor %}
+		<div style="text-align: center;">
+			<span>
+			{% if page_obj.has_previous  %}
+				<a href="?page={{ page_obj.previous_page_number }}">◀</a>
+			{% endif  %}
 
+			{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+
+			{% if page_obj.has_next  %}
+				<a href="?page={{ page_obj.next_page_number }}">▶</a>
+			{% endif   %}
+			</span>
+		</div>
 		<div class="gap40"></div>
 
 		<div >

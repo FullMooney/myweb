@@ -1,0 +1,155 @@
+div#content_home{
+	position: relative;
+	top: 20px;
+	width: 80%;
+	left: 10%;
+	max-width: 1100px;
+	clear: both;
+}
+
+div#content_home > table{
+	position: relative;
+	/*float: left;*/
+	align-content: center;	
+}
+
+div#homeimg{
+	position: relative;
+	padding: 5px 0 1px 5px;
+	text-align: center;	
+	background: rgba(0,46,122,1);
+	background-size: cover;
+	align-content: center;
+	width: 100%;
+}
+
+div#homeimg > h4{
+	color: rgba(252,217,36,1);
+}
+
+.fl_left{
+	position: relative;
+	float: left;
+}
+
+.fl_right{
+	position: relative;
+	float: right;
+}
+
+
+
+.tag-1 {font-size:22px; text-decoration: none !important;}
+
+.tag-2 {font-size:24px; text-decoration: none !important;}
+
+.tag-3 {font-size:26px; text-decoration: none !important;}
+
+.tag-4 {font-size:28px; text-decoration: none !important;}
+
+.tag-5 {font-size:30px; text-decoration: none !important;}
+
+.tag-6 {font-size:34px; text-decoration: none !important;}
+
+.blog-list{
+	position: relative;
+	max-width: 1060px;
+	overflow: hidden;
+	margin: 0 0 30px 0;
+}
+
+.cont_post{
+	position: relative;
+	max-width: 900px;
+	height: 154px;
+	padding-right: 0;
+	border-bottom: 1px solid #ededed;	
+	overflow: hidden;
+	text-overflow: ellipsis;	
+	white-space: normal;
+}
+
+.cont_img{
+	position: absolute;
+	top: 10px;
+	right: 0px;
+	width: 170px;
+	height: 120px;
+}
+
+.tag-cloud{
+	width: 276px;
+	top: 10px;
+	right: 0px;
+	text-align: left;
+	padding: 5px;
+	/*border: 2px solid rgba(0,46,122,1);
+	background-color: rgba(252,217,36,1);*/
+	border: 0px;
+
+	position: absolute;	
+}
+
+
+.txt_wrap{
+	text-decoration: none;
+	font-size: 20px;
+	font-family: Avenir,"Lato","애플 SD 산돌고딕 Neo","Apple SD Gothic Neo","나눔바른고딕",NanumBarunGothic,"나눔고딕",NanumGothic,"맑은 고딕","Malgun Gothic","돋움",dotum,AppleGothic,sans-serif;
+}
+
+.txt_shorten{
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}
+
+.container{
+	position: relative;
+	width: 100%;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+
+.gap10{
+	height: 10px;
+}
+
+.gap20{
+	height: 20px;
+}
+
+.gap30{
+	height: 30px;
+}
+
+.gap40{
+	height: 40px;
+}
+
+.search_area{
+	border: 1px solid rgba(252,217,36,1);
+	border-radius: 4px;
+	height: 30px;
+	width: 80%;
+	margin-left: -10px;
+	color: rgba(0,46,122,1);
+}
+
+.btn_search{
+	width: 15%;
+	height: 32px;	
+	color: rgba(252,217,36,1);
+	background: rgba(0,46,122,1);
+	cursor: pointer;
+	border: 0;
+	font-family: xeicon;
+}
+
+legend{
+	display: none;
+}
+
+fieldset{
+	border: 0;
+}
