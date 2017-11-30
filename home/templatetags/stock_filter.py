@@ -60,7 +60,7 @@ def get_airdata(value):
     airDataList = xmldata['item']
     #print(airDataList)
 
-    resultAirData = airDataList[1]['pm25Value']
+    resultAirData = airDataList[0]['pm25Value']
     print(resultAirData)
 
     #print('------- '+resultAirData)
