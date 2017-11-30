@@ -15,7 +15,7 @@ div#content_home > table{
 
 div#homeimg{
 	position: relative;
-	padding: 5px 0 1px 5px;
+	padding: 0px 0 1px 5px;
 	text-align: center;	
 	background: rgba(0,46,122,1);
 	background-size: cover;
@@ -25,6 +25,7 @@ div#homeimg{
 
 div#homeimg > h4{
 	color: rgba(252,217,36,1);
+	margin-top: 0px;
 }
 
 .fl_left{
