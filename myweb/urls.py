@@ -46,5 +46,7 @@ urlpatterns = [
 
     #practice
     url(r'^practice/', include('practice.urls', namespace='practice')),
+
+    url(r'^bit.json$', HomeView.bitsise),    
     
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) # add for photo
