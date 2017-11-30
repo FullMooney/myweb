@@ -29,7 +29,7 @@ def get_weather(value):
     owm = OWM(WAETHERAPI_key)
     obs = owm.weather_at_place('Seoul')
     w = obs.get_weather()
-    resultVal ='seoul : ' + w.get_status() + ', '+ str(w.get_temperature(unit='celsius')['temp'])
+    resultVal ='seoul, ' + w.get_status() + ', '+ str(w.get_temperature(unit='celsius')['temp'])
     print('Seoul : ', w.get_status(), w.get_temperature(unit='celsius')['temp'])
     return resultVal
 

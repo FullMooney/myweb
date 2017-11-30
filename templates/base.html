@@ -45,7 +45,7 @@
     			$('#gohome').attr("href","{% url 'mobihome' %}");
 			}
 		</script>
-		<h4 class="welcome"><a href="#" class="weather">날씨 : {{''|get_weather}} / 미세먼지농도 : {{'/'|get_airdata}}</a></h4>
+		<h4 class="welcome"><a href="#" class="weather">날씨 : {{''|get_weather}} °C / 미세먼지농도 : {{'/'|get_airdata}}㎍/㎥</a></h4>
 				
 		{% if user.is_active %}
 		<h4 class="welcome">환영합니다, 
