@@ -7,6 +7,8 @@
 
 
 {% load staticfiles %}
+{% load stock_filter %}
+{% load staticfiles %}
 <link rel="stylesheet" title="basecss" type="text/css" href="{% static 'css/base.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
@@ -18,6 +20,7 @@
 <script type="text/javascript">
 	if((/Mobi/.test(navigator.userAgent))) {
 		$('head').append('<link rel="stylesheet" title="basecss_m" type="text/css" href="{% static 'css/base_m.css' %}" />');
+		$('#maintitle').html("&nbsp;파이썬학습조직");
 	}else{
 		$('head').append('<link rel="stylesheet" title="basecss_m" type="text/css" href="{% static 'css/base.css' %}" />');
 	}
@@ -43,7 +46,7 @@
     			$('#gohome').attr("href","{% url 'mobihome' %}");
 			}
 		</script>
-		<h4 class="welcome"><a href="#" class="weather">미세먼지/날씨 H4</a></h4>
+		<h4 class="welcome"><a href="#" class="weather">날씨 : {{''|get_weather}} °C / 미세먼지농도 : {{'/'|get_airdata}}㎍/㎥</a></h4>
 				
 		{% if user.is_active %}
 		<h4 class="welcome">환영합니다, 
@@ -109,11 +112,12 @@
 		<li><a href="{% url 'admin:index' %}">관리자</a></li>
 	</div>
 
-	<div style="height: 20px;background:rgba(0,46,122,1); padding-left: 5px;width: 100%;"></div>
+	<!-- <div style="height: 20px;background:rgba(0,46,122,1); padding-left: 5px;width: 100%;"></div> -->
 
 	{% block content %}{% endblock %}	
 	{% block footer %}{% endblock %}
 </body>
+
 <script type="text/javascript">
     if((/Mobi/.test(navigator.userAgent))) $('#maintitle').html("&nbsp;&nbsp;파이썬학습조직");
 
