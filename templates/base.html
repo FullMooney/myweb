@@ -16,6 +16,13 @@
 <script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
 <script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
 <script type="text/javascript">
+	if((/Mobi/.test(navigator.userAgent))) {
+		$('head').append('<link rel="stylesheet" title="basecss_m" type="text/css" href="{% static 'css/base_m.css' %}" />');
+	}else{
+		$('head').append('<link rel="stylesheet" title="basecss_m" type="text/css" href="{% static 'css/base.css' %}" />');
+	}
+</script>
+<script type="text/javascript">
 	function fn_write(){
 		document.location.href = "add";
 
@@ -108,15 +115,7 @@
 	{% block footer %}{% endblock %}
 </body>
 <script type="text/javascript">
+    if((/Mobi/.test(navigator.userAgent))) $('#maintitle').html("&nbsp;&nbsp;파이썬학습조직");
 
-	    console.log("before mobile!!!!");
-	$(document).finish(function(){
-	    console.log("mobile!!!!");
-		if(/Mobi/.test(navigator.userAgent)) {
-			$('head').append('<link rel="stylesheet" title="basecss_m" type="text/css" href="{% static 'css/base_m.css' %}" />');
-			$('link[title="basecss"]').remove();
-			$('#maintitle').text("파이썬학습조직");
-		}
-	});
 </script>
 </html>
