@@ -29,8 +29,15 @@
 		<script type="text/javascript">
 
 			/**리스트에서 img 태그 제거 */
-			var txt = $("#{{ post.id }}").text();
+			/*var txt = $("#{{ post.id }}").text();
 			$("#{{ post.id }}").text('').append(txt).find('img').remove().end().text();
+			*/
+			var s =	$("#{{ post.id }}").html();			
+			var e = document.createElement('div');
+			e.innerHTML = s;
+			var htm = e.childNodes[0].nodeValue;
+			var xxx = $(htm).text();
+			$('#{{post.id}}').text(xxx);
 		</script>
 		{% endfor %}
 		<div style="text-align: center; font-size: 22px;">

@@ -50,11 +50,12 @@
 				var tgt = document.getElementById("img{{ post.id }}");
 				tgt.src = e.getElementsByTagName("img")[0].src;
 				
-			}
+			}			
 
-			/**리스트에서 img 태그 제거 */
-			var txt = $("#{{ post.id }}").text();
-			$("#{{ post.id }}").text('').append(txt).find('img').remove().end().text();
+			/**리스트에서 txt만 보이게 하기 */					
+			var xxx = $(htm).text();
+			$('#{{post.id}}').text(xxx);
+
 		</script>
 		{% endfor %}
 		<div style="text-align: center;">

@@ -37,8 +37,10 @@
 				$("#blog-list").css("width", "80%");
 			}
 			/**리스트에서 img 태그 제거 */
-			var txt = $("#{{ post.id }}").text();
-			$("#{{ post.id }}").text('').append(txt).find('img').remove().end().text();
+			/*var txt = $("#{{ post.id }}").text();
+			$("#{{ post.id }}").text('').append(txt).find('img').remove().end().text();*/
+			var xxx = $(htm).text();
+			$('#{{post.id}}').text(xxx);
 		</script>
 	{% endfor %}
 
