@@ -57,7 +57,7 @@ class BookmarkLV(ListView):
 class BookmarkDV(DetailView):
 	model = Bookmark	
 	def hit_count(request):
-		h_id = request.POST.get("id","")
+		h_id = request.GET.get("id","")
 		mymodel = BookmarkDV.model.objects.filter(id__in=h_id).update(visiters=F('visiters')+1)		
 		data = { 'id': [ h_id] }
 		return HttpResponse(json.dumps(data),content_type='text/json')

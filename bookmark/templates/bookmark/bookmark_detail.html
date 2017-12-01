@@ -5,9 +5,8 @@
 {% block content %}
 <script type="text/javascript">
 	function fn_increase(id){
-	var token = $('input[name=csrfmiddlewaretoken]').val();	
-	$.post('/bookmark/visiters', { 'id': '{{object.id}}'
-		                           ,'csrfmiddlewaretoken': token
+	$.get('/bookmark/visiters', { 'id': '{{object.id}}'
+		                           /*,'csrfmiddlewaretoken': token*/
 		                         }, 
 									function(data, status){
 										if(data.status == 'error'){
