@@ -7,15 +7,15 @@
 
 {% block content %}
 <div id = "content">
-	<h1>New User Registration</h1>
+	<h1>신규 사용자 등록</h1>
 
 	<form method="post" action=".">{% csrf_token %}
 
 		{% if form.errors %}
-		<p class="errornote">Wrong! Please correct the error(s) below.</p>
+		<p class="errornote">등록 에러입니다. 비밀번호는 8자리 이상으로 등록 바랍니다.</p>
 		{% endif %}
 
-		<p>Please enter your username etc.</p>
+		<p>사용하실 ID와 Password 를 입력하세요.</p>
 
 		<fieldset class="aligned">
 			<div class="form-row">
