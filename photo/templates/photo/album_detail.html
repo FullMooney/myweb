@@ -30,7 +30,7 @@
 	<div class="album-detail">
 		{% for photo in object.photo_set.all %} <!--print 5 thumbnail -->
 		<div class="album-detail-photo">
-			<a href="{{ photo.get_absoulte_url }}">
+			<a href="{{ photo.get_absolute_url }}">
 				<img class="thumbnail" src="{{ photo.image.thumb_url }}" />
 			</a>
 			<li>{{ photo.title}}</li>
