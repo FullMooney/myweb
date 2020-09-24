@@ -1,17 +1,18 @@
-from django.shortcuts import render, HttpResponse, render_to_response
+from django.shortcuts import render, HttpResponse#, render_to_response #render_to_response는 render로 통합 
 
 from django.views.generic import ListView, DetailView
 #from django.views.generic.base import TemplateView
 from bookmark.models import Bookmark
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView # for edit
-from django.core.urlresolvers import reverse_lazy # for edit
+# from django.core.urlresolvers import reverse_lazy # for edit #outdated
+from django.urls import reverse_lazy
 from myweb.views import LoginRequiredMixin # for edit
 
 # chart
 import random, json
 import pandas as pd
-from vincent.colors import brews
+# from vincent.colors import brews
 from django.db.models import F
 import sys
 
@@ -49,7 +50,8 @@ class BookmarkLV(ListView):
 
 	    return HttpResponse(json.dumps(series),content_type='text/json')
 	def main_page(request):
-		return render_to_response('bookmark_list.html')
+		# return render_to_response('bookmark_list.html')
+		return render(None, 'bookmark_list.html')
 
 	
 

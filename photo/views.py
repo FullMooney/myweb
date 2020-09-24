@@ -4,7 +4,8 @@ from photo.models import Album, Photo
 
 #----add 3lines below for edit
 from django.views.generic.edit import CreateView, UpdateView, DeleteView # for edit
-from django.core.urlresolvers import reverse_lazy # for edit
+# from django.core.urlresolvers import reverse_lazy # for edit #outdated
+from django.urls import reverse_lazy
 from myweb.views import LoginRequiredMixin # for edit
 
 # Create your views here.

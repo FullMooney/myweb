@@ -1,10 +1,11 @@
 from __future__ import unicode_literals
-from django.utils.encoding import python_2_unicode_compatible
+# from django.utils.encoding import python_2_unicode_compatible #outdated
+from six import python_2_unicode_compatible
 
 from django.db import models
 
-from django.core.urlresolvers import reverse
-
+# from django.core.urlresolvers import reverse #outdated
+from django.urls import reverse
 from photo.fields import ThumbnailImageField
 from django.contrib.auth.models import User # for edit
 # Create your models here.
@@ -13,7 +14,7 @@ from django.contrib.auth.models import User # for edit
 class Album(models.Model):
 	name = models.CharField(max_length=50)
 	description = models.CharField('One Line Description', max_length=100, blank=True)
-	owner = models.ForeignKey(User, null=True) # for edit
+	owner = models.ForeignKey(User, null=True, on_delete=models.DO_NOTHING,) # for edit
 
 	class Meta:
 		ordering = ['name']
@@ -26,12 +27,12 @@ class Album(models.Model):
 
 @python_2_unicode_compatible
 class Photo(models.Model):
-	album = models.ForeignKey(Album)
+	album = models.ForeignKey(Album, on_delete=models.DO_NOTHING,)
 	title = models.CharField(max_length=50)
 	image = ThumbnailImageField(upload_to='photo/%Y/%m')
 	description = models.TextField('Photo Description', blank=True)
 	upload_date = models.DateTimeField('Upload Date', auto_now_add=True)
-	owner = models.ForeignKey(User, null=True) # for edit
+	owner = models.ForeignKey(User, null=True, on_delete=models.DO_NOTHING,) # for edit
 	
 	class Meta:
 		ordering = ['title']

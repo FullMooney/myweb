@@ -1,14 +1,16 @@
 # -*- encoding:utf8 -*-
-from django.shortcuts import render, HttpResponse, render_to_response
+from django.shortcuts import render, HttpResponse #, render_to_response
+
 
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView # for edit
-from django.core.urlresolvers import reverse_lazy # for edit
+# from django.core.urlresolvers import reverse_lazy # for edit # outdated
+from django.urls import reverse_lazy
 
 from practice.models import Practice
 import random, json
 import pandas as pd
-from vincent.colors import brews
+# from vincent.colors import brews
  
 # Create your views here.
 def data_json(request):
@@ -34,4 +36,5 @@ def data_json(request):
     return HttpResponse(json.dumps(data),content_type='text/json')
  
 def main_page(request):
-    return render_to_response('graph.html')
+    # return render_to_response('graph.html')
+    return render(None, 'graph.html')

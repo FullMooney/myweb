@@ -1,10 +1,12 @@
 from __future__ import unicode_literals
-from django.utils.encoding import python_2_unicode_compatible
+# from django.utils.encoding import python_2_unicode_compatible #outdated
+from six import python_2_unicode_compatible
 
 from django.db import models
 from django.contrib import admin
 from django import forms
-from django.core.urlresolvers import reverse
+# from django.core.urlresolvers import reverse #outdated
+from django.urls import reverse
 from tagging.fields import TagField # tagging
 from django.contrib.auth.models import User # for edit
 from django.utils.text import slugify # for edit
@@ -22,7 +24,7 @@ class Post(models.Model):
 	create_date = models.DateTimeField('Create Date', auto_now_add=True)
 	modify_date = models.DateTimeField('Modify Date', auto_now=True)
 	tag = TagField() # tagging
-	owner = models.ForeignKey(User, null=True) # for edit
+	owner = models.ForeignKey(User, null=True, on_delete=models.DO_NOTHING,) # for edit
 
 	class Meta:
 		verbose_name='post'

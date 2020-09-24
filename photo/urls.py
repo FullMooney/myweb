@@ -1,6 +1,8 @@
 from django.conf.urls import url
 from photo.views import *
 
+app_name = 'photo'
+
 urlpatterns = [
 	# Example : /
 	url(r'^$', AlbumLV.as_view(), name = 'index'),

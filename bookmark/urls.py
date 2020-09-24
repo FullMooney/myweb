@@ -2,6 +2,8 @@ from django.conf.urls import url
 #from bookmark.views import BookmarkLV, BookmarkDV
 from bookmark.views import * # for edit
 
+app_name = 'bookmark'
+
 urlpatterns= [
 	#Class-based views
 	url(r'^$', BookmarkLV.as_view(), name='index'),

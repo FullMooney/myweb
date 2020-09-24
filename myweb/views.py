@@ -5,9 +5,10 @@ from blog.models import Post
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
-from django.core.urlresolvers import reverse_lazy
+# from django.core.urlresolvers import reverse_lazy #oudated
+from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required # add
-from django.shortcuts import render, HttpResponse, render_to_response
+from django.shortcuts import render, HttpResponse #, render_to_response
 import requests
 import json
 #from django.db.models.loading import get_model

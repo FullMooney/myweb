@@ -6,9 +6,9 @@
 <title>{% block title %} Django Web Programming {% endblock %} </title>
 
 
-{% load staticfiles %}
-{% load stock_filter %}
-{% load staticfiles %}
+{% load static %}
+
+{% load static %}
 <link rel="stylesheet" title="basecss" type="text/css" href="{% static 'css/base.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
@@ -46,7 +46,7 @@
     			$('#gohome').attr("href","{% url 'mobihome' %}");
 			}
 		</script>
-		<h4 class="welcome"><a href="#" class="weather">날씨 : {{''|get_weather}} °C / 미세먼지농도 : {{'/'|get_airdata}}㎍/㎥</a></h4>
+		
 				
 		{% if user.is_active %}
 		<h4 class="welcome">환영합니다, 

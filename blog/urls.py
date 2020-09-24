@@ -1,6 +1,8 @@
 from django.conf.urls import url,include
 from blog.views import *
 
+app_name = 'blog'
+
 urlpatterns = [
 	# Example : /
 	url(r'^$', PostLV.as_view(), name = 'index'),

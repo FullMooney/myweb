@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'disqus',                        # comment
     'django.contrib.sites',          # comment
     'photo.apps.PhotoConfig',        # photo
-    'rss.apps.RssConfig',            # rss
+    # 'rss.apps.RssConfig',            # rss
     'ckeditor',                      # editor
     'ckeditor_uploader',             # editor
     'practice.apps.PracticeConfig',  # practice
@@ -97,7 +97,7 @@ DATABASES = {
         'NAME': 'pyblog',
         'USER': 'admin',
         'PASSWORD': 'admin12!',
-        'HOST': '0.0.0.0',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }

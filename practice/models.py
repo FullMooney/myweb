@@ -1,7 +1,8 @@
 from __future__ import unicode_literals #python 2.x support
 
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
+# from django.utils.encoding import python_2_unicode_compatible # outdated
+from six import python_2_unicode_compatible
 
 # Create your models here.
 
